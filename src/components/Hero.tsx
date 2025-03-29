@@ -56,7 +56,6 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "./NavBar";
 import UnfilledCircle from "./UnfilledCircle";
 import Circle from "./Circle";
 import GridLine from "./GridLines";
@@ -68,7 +67,7 @@ const Hero: React.FC = () => {
     // Responsive padding (px-6 for small screens, md:px-20 for medium and above) ensures proper spacing.
     // The inline style provides a font-family fallback if Poppins is unavailable.
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <section
         role="banner"
         aria-label="Hero section introducing portfolio"
