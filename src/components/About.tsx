@@ -136,20 +136,19 @@ const BioSection = () => {
           Each badge is clickable (using React Router's Link) to provide more details about the project.
           Hover effects (scale and color change) enhance user engagement.
         */}
-        <ul className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2">
           {projectHighlights.map((projectHighlight, index) => (
             <Link
               key={index}
               to={projectHighlight.preview}
+              className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]"
               aria-label="Go to Project"
             >
-              <li className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]">
-                {projectHighlight.title}
-                <MdOpenInNew className="text-base" />
-              </li>
+              {projectHighlight.title}
+              <MdOpenInNew className="text-base" />
             </Link>
           ))}
-        </ul>
+        </div>
       </div>
       {/* Call-to-Action Button */}
       <div className="mb-6">
