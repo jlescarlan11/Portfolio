@@ -67,7 +67,7 @@ const BioSection = () => {
       {/* Section Heading */}
       <h2 className="text-3xl font-bold mb-4">About Me</h2>
       {/* Bio Text */}
-      <p className="text-lg leading-relaxed mb-6">
+      <p className="text-lg text-balance break-normal hyphens-auto text-justify leading-relaxed mb-6">
         I am a BS Mathematics student with a passion for web development.
         Although my professional experience is limited, I have completed several
         frontend projects that showcase my skills and dedication to learning and
@@ -101,7 +101,7 @@ const BioSection = () => {
           Each badge is clickable (using React Router's Link) to provide more details about the project.
           Hover effects (scale and color change) enhance user engagement.
         */}
-        <ul className="flex flex-wrap space-x-4">
+        <ul className="flex flex-wrap gap-2">
           {projectHighlights.map((projectHighlight) => (
             <li className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]">
               {projectHighlight.title}
