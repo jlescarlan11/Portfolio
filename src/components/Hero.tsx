@@ -73,15 +73,6 @@ const Hero: React.FC = () => {
         className=" overflow-hidden relative flex flex-col items-center justify-center h-screen bg-[var(--primary-color)] px-6 md:px-20 py-8"
         style={{ fontFamily: '"Poppins", sans-serif' }}
       >
-        <UnfilledCircle className="size-40 absolute stroke-[var(--text-color)] stroke-2 -right-24 top-4 opacity-20" />
-        <Circle
-          className="size-96 fill-[var(--text-color)] absolute -top-48 -left-48
-        opacity-20"
-        />
-        <Circle className="size-96 fill-[var(--text-color)] absolute  -bottom-48 -right-48 opacity-20" />
-        {/* grid lines */}
-        <UnfilledCircle className="size-40 absolute stroke-[var(--text-color)] stroke-2 left-4 -bottom-24 opacity-20" />
-
         {/*
         Dynamic Gradient Overlay:
         - Positioned absolutely to cover the entire hero section.
