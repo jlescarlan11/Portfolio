@@ -15,7 +15,13 @@ import {
   SiJavascript,
   SiNodedotjs,
 } from "react-icons/si";
-import nutchaBitesOverview from "../assets/project-nutcha-bites.jpg";
+import nutchaBitesOverview from "../assets/projects/project-nutcha-bites.jpg";
+import bookLibraryPreview from "../assets/projects/project-book-library.jpg";
+import rpsPreview from "../assets/projects/project-rock-paper-scissor.jpg";
+import calculatorPreview from "../assets/projects/project-calculator.jpg";
+import cvBuilderPreview from "../assets/projects/cv-builder.jpg";
+import memoryGamePreview from "../assets/projects/memory-game.jpg";
+import shoppingCartPreview from "../assets/projects/shopping-cart.jpg";
 import { MdOpenInNew } from "react-icons/md";
 
 // -----------------------------------------------------------------------------
@@ -75,6 +81,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           className="h-56 bg-cover bg-center mb-4 rounded-xl "
           style={{ backgroundImage: `url(${project.thumbnail})` }}
         ></div>
+        {/* <img src={project.thumbnail} alt="" /> */}
         {/* Title */}
         <h3 className="text-2xl font-bold mb-2 text-[var(--text-color)]">
           {project.title}
@@ -122,19 +129,56 @@ const projects: Project[] = [
   {
     id: "2",
     title: "Shopping Cart",
-    description: "A brief description of project two.",
-    thumbnail: "/images/project2.jpg",
-    preview: "https://shoppingcart.example.com",
-    techStack: ["JavaScript", "Tailwind CSS", "Vite", "React"],
+    description:
+      "A simple shopping cart that calls the product by fake store api. This project emulates the shopping app that add to cart, checkout, remove, and updating orders",
+    thumbnail: `${shoppingCartPreview}`,
+    preview: "https://shopping-cart-ivory-ten.vercel.app/",
+    techStack: ["Tailwind CSS", "Vite", "React"],
   },
   {
     id: "3",
     title: "Memory Game",
-    description: "A brief description of project three.",
-    thumbnail: "/images/project3.jpg",
-    preview: "https://memorygame.example.com",
-    techStack: ["JavaScript", "Tailwind CSS", "Vite", "React"],
+    description:
+      "A simple game that randomly shuffles cards to test your memory.",
+    thumbnail: `${memoryGamePreview}`,
+    preview: "https://pokemon-memory-game-olive.vercel.app/",
+    techStack: ["React"],
   },
+  {
+    id: "4",
+    title: "Book Library",
+    description: "A book library that stores a collection of books locally.",
+    thumbnail: `${bookLibraryPreview}`,
+    preview: "https://jlescarlan11.github.io/book-library/",
+    techStack: ["JavaScript"],
+  },
+  {
+    id: "5",
+    title: "Rock Paper Scissor",
+    description:
+      "A simple rock paper scissor game that challenges computer with its random pick.",
+    thumbnail: `${rpsPreview}`,
+    preview: "https://jlescarlan11.github.io/rock-paper-scissor/",
+    techStack: ["JavaScript"],
+  },
+  {
+    id: "6",
+    title: "Calculator",
+    description: "A simple calculator app that computes a simple calculation.",
+    thumbnail: `${calculatorPreview}`,
+    preview: "https://jlescarlan11.github.io/calculator/",
+    techStack: ["JavaScript"],
+  },
+  {
+    id: "7",
+    title: "CV Builder",
+    description:
+      "A simple CV builder that asks some information about you then automatically build a CV to download.",
+    thumbnail: `${cvBuilderPreview}`,
+    preview: "https://cv-application-five-pink.vercel.app/",
+    techStack: ["React", "Vite"],
+  },
+
   // Additional projects can be added here.
 ];
 
@@ -144,6 +188,7 @@ const projects: Project[] = [
 const Portfolio: React.FC = () => {
   return (
     <section
+      role="region"
       aria-label="Portfolio Section"
       className="relative overflow-hidden bg-[var(--primary-color)] text-[var(--text-color)] pt-24 pb-12 px-4 sm:px-6 md:px-12"
     >

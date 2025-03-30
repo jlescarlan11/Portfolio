@@ -61,12 +61,12 @@ const projectHighlights: ProjectHighlight[] = [
   {
     id: "2",
     title: "Shopping Cart",
-    preview: "https://shoppingcart.example.com",
+    preview: "https://shopping-cart-ivory-ten.vercel.app/",
   },
   {
     id: "3",
     title: "Memory Game",
-    preview: "https://memorygame.example.com",
+    preview: "https://pokemon-memory-game-olive.vercel.app/",
   },
 ];
 
