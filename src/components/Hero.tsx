@@ -55,8 +55,6 @@
 // =============================================================================
 
 import React from "react";
-import UnfilledCircle from "./UnfilledCircle";
-import Circle from "./Circle";
 import { HashLink } from "react-router-hash-link";
 // Import Poppins font explicitly for typography
 
