@@ -102,7 +102,7 @@ const BioSection = () => {
       {/* Section Heading */}
       <h2 className="text-4xl font-bold mb-4">About Me</h2>
       {/* Bio Text */}
-      <p className="text-lg text-balance break-normal hyphens-auto text-justify leading-relaxed mb-6">
+      <p className="text-lg text-wrap break-normal hyphens-auto text-justify leading-relaxed mb-6">
         I am a BS Mathematics student with a passion for web development.
         Although my professional experience is limited, I have completed several
         frontend projects that showcase my skills and dedication to learning and

@@ -80,7 +80,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.title}
         </h3>
         {/* Description */}
-        <p className="text-sm mb-4 text-[var(--text-color)]">
+        <p className="text-sm mb-4 text-[var(--text-color)] text-wrap break-normal hyphens-auto text-justify">
           {project.description}
         </p>
         {/* Tech Stack Badges */}
