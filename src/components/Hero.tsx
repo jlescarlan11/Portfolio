@@ -81,8 +81,7 @@ const Hero: React.FC = () => {
         />
         <Circle className="size-96 fill-[var(--text-color)] absolute  -bottom-48 -right-48 opacity-20" />
         {/* grid lines */}
-        <GridLine className="size-48 fill-[var(--primary-color)] absolute top-0 right-0 opacity-20" />
-        <GridLine className="size-48 fill-[var(--primary-color)] absolute -bottom-24 left-0 opacity-20" />
+        <GridLine className="w-dvw fill-[var(--primary-color)] absolute top-0 right-0 opacity-30" />
         <UnfilledCircle className="size-40 absolute stroke-[var(--text-color)] stroke-2 left-4 -bottom-24 opacity-20" />
 
         {/*

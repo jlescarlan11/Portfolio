@@ -13,21 +13,17 @@ const GridLine: React.FC<GrigLineProps> = ({ className }) => {
       viewBox="0 0 200 200"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect x="0" y="0" width="200" height="200" />
-      <path
-        d="
-          M 0  40 H 200
-          M 0  80 H 200
-          M 0 120 H 200
-          M 0 160 H 200
-          M 40  0 V 200
-          M 80  0 V 200
-          M 120 0 V 200
-          M 160 0 V 200
-        "
-        stroke="var(--text-color)"
-        strokeWidth="1"
-      />
+      <defs>
+        <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+          <path
+            d="M 30 0 L 0 0 0 30"
+            fill="none"
+            stroke="var(--secondary-color)"
+            stroke-width="0.5"
+          />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
     </svg>
   );
 };

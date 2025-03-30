@@ -20,8 +20,8 @@ interface EducationEntry {
   id: string;
   schoolName: string;
   yearsAttended: string;
-  awards: string;
-  achievements: string;
+  awards?: string;
+  achievements?: string;
 }
 
 // -----------------------------------------------------------------------------
@@ -32,26 +32,22 @@ const educationData: EducationEntry[] = [
     id: "1",
     schoolName: "University of the Philippines",
     yearsAttended: "2022 - Present",
-    awards: "College Scholar (2022-2023), University Scholar (2023)",
     achievements:
-      "Bachelor's in Mathematics; conducted research on computational methods.",
+      "Recognized as a College Scholar (2022-2023) for demonstrating exceptional academic performance and leadership, and subsequently honored as a University Scholar (2023) for sustained excellence and impactful contributions in both academic and extracurricular pursuits.",
   },
   {
     id: "2",
     schoolName: "South East Asia Institute of Trade and Technology",
     yearsAttended: "2020 - 2022",
-    awards: "Best in Mathematics, Best in Statistics and  Probability",
     achievements:
-      "Graduated top of the class; organized school coding competitions.",
+      "Awarded for outstanding achievement in Mathematics, Statistics, and Probability, consistently ranking at the top of the class. Recognized for exceptional analytical and problem-solving skills that have set a benchmark for academic excellence.",
   },
   {
     id: "2",
     schoolName: "North Fairview High School",
     yearsAttended: "2016 - 2020",
-    awards:
-      "Graduated with Honors, 1st Place Math Quiz Bowl (2019), District Level Qualifier Damath Competition",
     achievements:
-      "Graduated top of the class; organized school coding competitions.",
+      "Graduated with Honors, demonstrating a commitment to academic excellence; achieved 1st Place in the 2019 Math Quiz Bowl and advanced as a District-Level Qualifier in the Damath Competition, underscoring exceptional analytical skills and competitive drive.",
   },
   // Additional entries can be added here.
 ];
@@ -74,16 +70,15 @@ const EducationCard: React.FC<EducationCardProps> = ({ entry }) => {
       className="bg-[var(--primary-color)] text-[var(--text-color)] border border-[var(--secondary-color)] rounded-lg p-6 transition transform duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--secondary-color)]"
     >
       <h3 className="text-2xl font-bold mb-2">
-        <span className="text-[var(--accent-color)]">{entry.schoolName}</span>
+        <span className="text-[var(--text-color)]">{entry.schoolName}</span>
       </h3>
       <p className="text-base mb-1">{entry.yearsAttended}</p>
-      <p className="text-base mb-2">
-        <span className="font-semibold text-[var(--accent-color)]">
-          Awards:{" "}
+      <p className="text-base font-extralight">
+        <span className="font-semibold text-[var(--text-color)]">
+          Achievements:{" "}
         </span>
-        {entry.awards}
+        {entry.achievements}
       </p>
-      <p className="text-base">{entry.achievements}</p>
     </div>
   );
 };
@@ -96,9 +91,9 @@ const Education: React.FC = () => {
     <section
       role="contentinfo"
       aria-label="Education Section"
-      className="bg-[var(--primary-color)] text-[var(--text-color)] px-4 sm:px-6 md:px-12 animate-fadeIn"
+      className="bg-[var(--primary-color)] relative overflow-hidden text-[var(--text-color)] px-4 sm:px-6 md:px-12 "
     >
-      <div className="mx-auto relative flex flex-col items-center py-12">
+      <div className="mx-auto relative flex flex-col items-center py-12 animate-fadeIn">
         <h2 className="text-4xl font-bold text-center my-8">Education</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {educationData.map((entry) => (

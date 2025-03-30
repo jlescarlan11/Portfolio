@@ -1,49 +1,103 @@
 // Portfolio.tsx
 // =============================================================================
-// Portfolio Component for Web Developer's Portfolio
+// Portfolio Component for Web Developer's Portfolio with Description Modal
 //
 // This component renders a responsive grid layout of interactive project cards.
-// Each card displays a project thumbnail, title, and brief description and links to a
-// detailed project page using React Router's Link component.
+// Each card displays a project thumbnail with a gradient overlay, title, brief description,
+// tech stack (with icons), a "Preview" button linking to the live website preview,
+// and a "View Description" button that opens a modal with the full description.
 //
 // Design Details:
 //   - Background: var(--primary-color)
 //   - Text: text-[var(--text-color)]
 //   - Accents/Borders: var(--secondary-color)
 //   - Typography: Uses the globally configured Roboto font.
-//   - Layout: A responsive grid layout that uses grid-cols-1 (mobile), sm:grid-cols-2 (tablet),
-//             and md:grid-cols-3 (desktop) to adapt to different screen sizes.
-//   - Vertical Spacing: Top padding (pt-24) ensures that the section is not hidden behind a fixed navbar,
-//                       keeping the content centered on desktop, tablet, and mobile.
-//   - Interactivity: Hover effects (scale, background changes) and smooth transitions enhance user engagement.
-//   - Focus Styles: Enhanced focus states with Tailwind's focus:ring utilities improve keyboard navigation.
-//   - Accessibility: ARIA roles (e.g., role="list" for the grid container, role="listitem" for cards)
-//                    provide semantic clarity for assistive technologies.
-//
-// This component is part of my personal portfolio showcasing frontend projects built with
-// React, TypeScript, Tailwind CSS, and React Router. Inline documentation details the responsive
-// layout and spacing decisions for future reference.
+//   - Layout: Responsive grid (grid-cols-1 for mobile, sm:grid-cols-2 for tablet, md:grid-cols-3 for desktop).
+//   - Vertical Spacing: Top padding (pt-24) prevents content from being hidden behind a fixed navbar.
+//   - Interactivity: Hover effects and smooth transitions enhance user engagement.
+//   - Focus Styles: Tailwind's focus:ring utilities improve keyboard navigation.
 // =============================================================================
 
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { JSX, useState } from "react";
+import { BiLogoTailwindCss, BiLogoReact } from "react-icons/bi";
+import { SiTypescript, SiVite, SiRedux, SiJavascript } from "react-icons/si";
+import nutchaBitesOverview from "../assets/project-nutcha-bites.jpg";
+import { MdOpenInNew } from "react-icons/md";
 
 // -----------------------------------------------------------------------------
 // Project Interface
 // -----------------------------------------------------------------------------
-// Defines the structure for each project item.
 interface Project {
   id: string;
   title: string;
   description: string;
   thumbnail: string; // Path to the project thumbnail image.
-  route: string; // Route path to the detailed project page.
+  preview: string; // URL for the live preview of the project.
+  techStack: string[]; // List of technologies used (e.g. TypeScript, Tailwind CSS, Vite).
 }
+
+// -----------------------------------------------------------------------------
+// TechIcon Component
+// -----------------------------------------------------------------------------
+const techIconMap: { [key: string]: JSX.Element } = {
+  TypeScript: <SiTypescript className="w-5 h-5" title="TypeScript" />,
+  "Tailwind CSS": (
+    <BiLogoTailwindCss className="w-5 h-5" title="Tailwind CSS" />
+  ),
+  Vite: <SiVite className="w-5 h-5" title="Vite" />,
+  React: <BiLogoReact className="w-5 h-5" title="React" />,
+  Redux: <SiRedux className="w-5 h-5" title="Redux" />,
+  JavaScript: <SiJavascript className="w-5 h-5" title="TypeScript" />,
+};
+
+// -----------------------------------------------------------------------------
+// TechBadge Component
+// -----------------------------------------------------------------------------
+const TechBadge: React.FC<{ tech: string }> = ({ tech }) => {
+  return (
+    <span className="inline-flex justify-start px-2 py-1 m-1 text-xs font-medium rounded-full bg-gray-800 text-gray-200">
+      {techIconMap[tech] || null}
+    </span>
+  );
+};
+
+// -----------------------------------------------------------------------------
+// DescriptionModal Component
+// -----------------------------------------------------------------------------
+interface DescriptionModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  description: string;
+}
+
+const DescriptionModal: React.FC<DescriptionModalProps> = ({
+  isOpen,
+  onClose,
+  title,
+  description,
+}) => {
+  if (!isOpen) return null;
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+      <div className="bg-[var(--primary-color)] text-[var(--text-color)] rounded-lg p-6 max-w-md mx-4 shadow-lg">
+        <h3 className="text-xl font-bold mb-4">{title}</h3>
+        <p className="mb-4">{description}</p>
+        <button
+          onClick={onClose}
+          className="inline-block px-4 py-2 bg-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition"
+          aria-label="Close description modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  );
+};
 
 // -----------------------------------------------------------------------------
 // ProjectCard Component Props
 // -----------------------------------------------------------------------------
-// Accepts a single project object and renders an interactive project card.
 interface ProjectCardProps {
   project: Project;
 }
@@ -51,104 +105,111 @@ interface ProjectCardProps {
 // -----------------------------------------------------------------------------
 // ProjectCard Component
 // -----------------------------------------------------------------------------
-// Renders an interactive card for a project.
-// The card includes a project thumbnail, title, and brief description.
-// Enhanced focus styles are provided for keyboard navigation using focus:ring utilities.
-// ARIA attributes (role="listitem" and aria-label) are included for semantic clarity.
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <Link
-      to={project.route}
-      role="listitem" // Denotes an item in a list for assistive technologies.
-      aria-label={`View details for ${project.title}`}
-      // Tailwind classes:
-      // - block p-4: Block element with padding.
-      // - bg-[var(--accent-color)]: Uses accent color for the background.
-      // - rounded-lg: Rounds the card's corners.
-      // - text-[var(--primary-color)]: Sets text color to primary for contrast.
-      // - text-center: Centers text content.
-      // - transition transform duration-200: Enables smooth transitions.
-      // - hover:scale-105, hover:bg-[var(--secondary-color)]: Scale-up and background change on hover.
-      // - focus:outline-none, focus:ring-2, focus:ring-offset-2, focus:ring-[var(--secondary-color)]:
-      //   Provides clear focus indicators for keyboard users.
-      className="block p-4 bg-[var(--accent-color)] rounded-lg text-[var(--primary-color)] text-center transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--secondary-color)]"
-    >
-      {/* Project Thumbnail */}
-      <img
-        src={project.thumbnail}
-        alt={`${project.title} Thumbnail`}
-        // Image styling:
-        // - w-full: Full width.
-        // - h-48: Fixed height to maintain consistency.
-        // - object-cover: Ensures the image covers the area without distortion.
-        // - rounded-md: Rounds the image corners.
-        // - mb-4: Margin bottom for spacing between image and text.
-        className="w-full h-48 object-cover rounded-md mb-4"
+    <>
+      <div
+        className="relative rounded-lg overflow-hidden transition transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--secondary-color)] h-64 bg-cover bg-center bg-no-repeat"
+        role="listitem"
+        aria-label={`Project card for ${project.title}`}
+        style={{ backgroundImage: `url(${project.thumbnail})` }}
+      >
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary-color)] to-transparent opacity-70"></div>
+        {/* Content */}
+        <div className="relative p-4 h-full flex flex-col justify-end text-white">
+          {/* Project Title */}
+          <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
+          {/* Tech Stack Display as Icon Badges */}
+          <div className="flex flex-wrap justify-start mb-2">
+            {project.techStack.map((tech) => (
+              <TechBadge key={tech} tech={tech} />
+            ))}
+          </div>
+          {/* Action Buttons */}
+          <div className="flex space-x-2">
+            {/* View Description Button */}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="inline-block px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition text-sm"
+              aria-label={`View description for ${project.title}`}
+            >
+              View Description
+            </button>
+            {/* Preview Button */}
+            <a
+              href={project.preview}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-1 items-center px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition text-sm"
+              aria-label={`Preview ${project.title}`}
+            >
+              Preview <MdOpenInNew />
+            </a>
+          </div>
+        </div>
+      </div>
+      {/* Description Modal */}
+      <DescriptionModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={project.title}
+        description={project.description}
       />
-      {/* Project Title */}
-      <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-      {/* Project Description */}
-      <p className="text-base">{project.description}</p>
-    </Link>
+    </>
   );
 };
 
 // -----------------------------------------------------------------------------
 // Sample Project Data
 // -----------------------------------------------------------------------------
-// In a real application, project data might be fetched from an API or stored externally.
 const projects: Project[] = [
   {
     id: "1",
     title: "Nutcha Bites",
-    description: "A brief description of project one.",
-    thumbnail: "/images/project1.jpg", // Update with actual image paths.
-    route: "/projects/1",
+    description:
+      "Nutcha Bites is a product website designed to replicate the experience of a genuine shopping app. I built this site to complement the product aspect of my business proposoal in my certain subject.",
+    thumbnail: `${nutchaBitesOverview}`,
+    preview: "https://nutcha-bites.vercel.app/",
+    techStack: ["TypeScript", "Tailwind CSS", "Vite", "React"],
   },
   {
     id: "2",
-    title: "Project Two",
+    title: "Shopping Cart",
     description: "A brief description of project two.",
     thumbnail: "/images/project2.jpg",
-    route: "/projects/2",
+    preview: "https://shoppingcart.example.com",
+    techStack: ["JavaScript", "Tailwind CSS", "Vite", "React"],
   },
   {
     id: "3",
-    title: "Project Three",
+    title: "Memory Game",
     description: "A brief description of project three.",
     thumbnail: "/images/project3.jpg",
-    route: "/projects/3",
+    preview: "https://memorygame.example.com",
+    techStack: ["JavaScript", "Tailwind CSS", "Vite", "React"],
   },
   // Additional projects can be added here.
 ];
 
 const Portfolio: React.FC = () => {
   return (
-    // The section uses top padding (pt-24) to ensure that the Portfolio content is not hidden
-    // behind a fixed navbar. This spacing helps center the section on all devices.
-    // Responsive padding is applied (px-4 for mobile, sm:px-6, md:px-12) to maintain balance.
+    // Section uses top padding (pt-24) to avoid content being hidden behind a fixed navbar.
     <section
       aria-label="Portfolio Section"
-      className="bg-[var(--primary-color)] text-[var(--text-color)] pt-24 pb-12 px-4 sm:px-6 md:px-12"
+      className="relative overflow-hidden bg-[var(--primary-color)] text-[var(--text-color)] pt-24 pb-12 px-4 sm:px-6 md:px-12"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto animate-fadeIn">
         {/* Section Heading */}
         <h2 className="text-4xl font-bold text-center mb-8">My Portfolio</h2>
-        {/* 
-          Grid Layout Container:
-          - role="list" indicates that this container is a list of items.
-          - grid grid-cols-1: One column on very small screens.
-          - sm:grid-cols-2: Two columns on tablets.
-          - md:grid-cols-3: Three columns on desktops.
-          - gap-8: Uniform spacing between grid items.
-          These responsive grid classes ensure a centered, non-scrollable layout that adapts to the viewport.
-        */}
+        {/* Grid Layout Container */}
         <div
           role="list"
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
         >
           {projects.map((project) => (
-            // Each project card is rendered using the reusable ProjectCard component.
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>

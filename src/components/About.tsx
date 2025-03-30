@@ -1,5 +1,7 @@
 import React from "react";
+import { MdOpenInNew } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 interface PhotoSectionProps {
   photoUrl?: string;
@@ -35,9 +37,33 @@ const PhotoSection: React.FC<PhotoSectionProps> = ({ photoUrl, showPhoto }) => {
   );
 };
 
+interface ProjectHighlight {
+  id: string;
+  title: string;
+  preview: string;
+}
+
+const projectHighlights: ProjectHighlight[] = [
+  {
+    id: "1",
+    title: "Nutcha Bites",
+    preview: "https://nutchabites.example.com",
+  },
+  {
+    id: "2",
+    title: "Shopping Cart",
+    preview: "https://shoppingcart.example.com",
+  },
+  {
+    id: "3",
+    title: "Memory Game",
+    preview: "https://memorygame.example.com",
+  },
+];
+
 const BioSection = () => {
   return (
-    <div className="w-full md:w-3/5 md:pl-12 animate-fadeIn">
+    <div className="w-full md:w-3/5 md:pl-12 ">
       {/* Section Heading */}
       <h2 className="text-3xl font-bold mb-4">About Me</h2>
       {/* Bio Text */}
@@ -49,8 +75,9 @@ const BioSection = () => {
       </p>
       {/* Call-to-Action Button */}
       <div className="mb-6">
-        <Link
-          to="/portfolio"
+        <HashLink
+          smooth
+          to="/#portfolio"
           role="button"
           aria-label="View Projects"
           // Tailwind classes:
@@ -61,10 +88,10 @@ const BioSection = () => {
           // - transition transform duration-200: Smooth interactive feedback.
           // - hover:scale-105 hover:shadow-xl, active:scale-95: Subtle hover and click animations.
           // - focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]: Enhanced focus for accessibility.
-          className="inline-block px-6 py-3 border border-transparent text-base sm:text-lg font-medium rounded-md text-[var(--primary-color)] bg-[var(--accent-color)] transition transform duration-200 hover:scale-105 hover:shadow-xl active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
+          className="inline-block px-6 py-3 border border-transparent text-base sm:text-lg font-medium rounded-md text-[var(--text-color)] bg-[var(--accent-color)] transition transform duration-200 hover:scale-105 hover:shadow-xl active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
         >
           View Projects
-        </Link>
+        </HashLink>
       </div>
       {/* Project Highlights Section */}
       <div className="mb-6">
@@ -75,21 +102,14 @@ const BioSection = () => {
           Hover effects (scale and color change) enhance user engagement.
         */}
         <ul className="flex flex-wrap space-x-4">
-          <li className="px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--primary-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]">
-            <Link to="/projects/projectA" aria-label="Project A Details">
-              Project A
-            </Link>
-          </li>
-          <li className="px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--primary-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]">
-            <Link to="/projects/projectB" aria-label="Project B Details">
-              Project B
-            </Link>
-          </li>
-          <li className="px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--primary-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]">
-            <Link to="/projects/projectC" aria-label="Project C Details">
-              Project C
-            </Link>
-          </li>
+          {projectHighlights.map((projectHighlight) => (
+            <li className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]">
+              {projectHighlight.title}
+              <Link to={projectHighlight.preview} aria-label="Go to Project">
+                <MdOpenInNew className="text-base" />
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
       {/* Engagement Elements: Social Media & Resume Links */}
@@ -141,9 +161,9 @@ const About: React.FC<AboutMeProps> = ({ photoUrl, showPhoto = true }) => {
     <>
       <section
         aria-label="About Me Section"
-        className="bg-[var(--primary-color)] text-[var(--text-color)] px-4 sm:px-6 md:px-12"
+        className="bg-[var(--primary-color)] relative overflow-hidden text-[var(--text-color)] px-4 sm:px-6 md:px-12"
       >
-        <div className="mx-auto min-h-dvh relative flex flex-col md:flex-row items-center">
+        <div className="mx-auto min-h-dvh flex flex-col md:flex-row items-center animate-fadeIn">
           <PhotoSection photoUrl={photoUrl} showPhoto={showPhoto} />
           <BioSection />
         </div>

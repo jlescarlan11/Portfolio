@@ -1,85 +1,100 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
-interface NavLinkItem {
+interface HashLinkItem {
   name: string;
   path: string;
 }
 
-interface NavLinkItemProps {
-  link: NavLinkItem;
+interface HashLinkItemProps {
+  link: HashLinkItem;
   onClick?: () => void;
   extraClasses?: string;
+  isActive?: boolean;
 }
 
-const NavLinkItem: React.FC<NavLinkItemProps> = ({
+const HashLinkItem: React.FC<HashLinkItemProps> = ({
   link,
   onClick,
   extraClasses = "",
-}) => (
-  <NavLink
-    to={link.path}
-    onClick={onClick}
-    className={({ isActive }) =>
-      `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 
-      hover:text-[var(--accent-color)] hover:underline 
-      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]
-      ${
-        isActive
-          ? "bg-[var(--accent-color)] text-white"
-          : "text-[var(--text-color)]"
-      } ${extraClasses}`
-    }
-  >
-    {link.name}
-  </NavLink>
-);
+  isActive = false,
+}) => {
+  const computedClassName = `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 
+    hover:text-[var(--accent-color)] hover:underline 
+    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]
+    ${
+      isActive ? "text-[var(--text-color)]" : "text-[var(--secondary-color)]"
+    } ${extraClasses}`;
 
-const navLinks: NavLinkItem[] = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Portfolio", path: "/portfolio" },
-  { name: "Contact", path: "/contact" },
-];
+  return (
+    <HashLink
+      smooth
+      to={link.path}
+      onClick={onClick}
+      className={computedClassName}
+    >
+      {link.name}
+    </HashLink>
+  );
+};
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  activeSection: string;
+}
+
+/**
+ * Navbar Component
+ *
+ * Renders a fixed navigation bar that starts transparent and transitions to the primary color
+ * as the user scrolls down.
+ *
+ * @param activeSection - The id of the currently visible section.
+ */
+const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [logoError, setLogoError] = useState<boolean>(false);
-  // Initialize background opacity (starting at 0.5)
-  const [bgOpacity, setBgOpacity] = useState<number>(0.5);
-
-  // Update opacity based on scroll position.
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      // Define a scroll threshold (in pixels) where the opacity reaches 1
-      const maxScroll = 200;
-      // Calculate new opacity: it starts at 0.5 and increases to 1 as you scroll.
-      const newOpacity = Math.min(1, 0.5 + (scrollY / maxScroll) * 0.5);
-      setBgOpacity(newOpacity);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Clean up event listener on component unmount
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // New state to track scroll position
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   const toggleMenu = (): void => setIsOpen(!isOpen);
   const handleLogoError = (): void => setLogoError(true);
+
+  // Set up scroll listener to update navbar background opacity
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change the threshold (50) as needed
+      if (window.scrollY > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const hashLinks: HashLinkItem[] = [
+    { name: "Home", path: "/#hero" },
+    { name: "About", path: "/#about" },
+    { name: "Education", path: "/#education" },
+    { name: "Portfolio", path: "/#portfolio" },
+    { name: "Contact", path: "/#contact" },
+  ];
 
   return (
     <nav
       role="navigation"
       aria-label="Main navigation"
-      // Apply inline style to set the dynamic background opacity using your CSS variable
-      style={{ backgroundColor: `rgba(var(--primary-color), ${bgOpacity})` }}
-      className="fixed w-full z-10 text-[var(--text-color)] font-montserrat transition-colors duration-300"
+      className={`fixed w-full z-50 transition-colors duration-300 ease-in-out ${
+        scrolled ? "bg-[var(--primary-color)]" : "bg-transparent"
+      } text-[var(--text-color)] montserrat-400`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          {/* Logo Section */}
           <div className="flex items-center">
-            <NavLink to="/" className="flex items-center">
+            <HashLink to="/#hero" className="flex items-center">
               {!logoError ? (
                 <img
                   src="/logo.png"
@@ -93,15 +108,25 @@ const Navbar: React.FC = () => {
                 </span>
               )}
               <span className="text-xl font-bold">My Portfolio</span>
-            </NavLink>
+            </HashLink>
           </div>
+          {/* Desktop Navigation Links */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navLinks.map((link) => (
-                <NavLinkItem key={link.path} link={link} />
-              ))}
+              {hashLinks.map((link) => {
+                const sectionId = link.path.split("#")[1];
+                const isActive = sectionId === activeSection;
+                return (
+                  <HashLinkItem
+                    key={link.path}
+                    link={link}
+                    isActive={isActive}
+                  />
+                );
+              })}
             </div>
           </div>
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
@@ -145,6 +170,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Mobile Navigation Menu with Enhanced Slide Animation */}
       <div
         id="mobile-menu"
         className={`md:hidden transition-all duration-300 ease-in-out transform ${
@@ -154,14 +180,19 @@ const Navbar: React.FC = () => {
         }`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navLinks.map((link) => (
-            <NavLinkItem
-              key={link.path}
-              link={link}
-              onClick={() => setIsOpen(false)}
-              extraClasses="block"
-            />
-          ))}
+          {hashLinks.map((link) => {
+            const sectionId = link.path.split("#")[1];
+            const isActive = sectionId === activeSection;
+            return (
+              <HashLinkItem
+                key={link.path}
+                link={link}
+                onClick={() => setIsOpen(false)}
+                extraClasses="block"
+                isActive={isActive}
+              />
+            );
+          })}
         </div>
       </div>
     </nav>
