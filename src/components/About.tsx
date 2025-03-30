@@ -161,9 +161,9 @@ const About: React.FC<AboutMeProps> = ({ photoUrl, showPhoto = true }) => {
     <>
       <section
         aria-label="About Me Section"
-        className="bg-[var(--primary-color)] relative overflow-hidden text-[var(--text-color)] px-4 sm:px-6 md:px-12"
+        className="relative overflow-hidden bg-[var(--primary-color)] text-[var(--text-color)] pt-24 pb-12 px-4 sm:px-6 md:px-12"
       >
-        <div className="mx-auto min-h-dvh flex flex-col md:flex-row items-center animate-fadeIn">
+        <div className="container mx-auto flex flex-col md:flex-row items-center animate-fadeIn">
           <PhotoSection photoUrl={photoUrl} showPhoto={showPhoto} />
           <BioSection />
         </div>

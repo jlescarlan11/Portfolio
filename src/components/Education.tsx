@@ -91,9 +91,9 @@ const Education: React.FC = () => {
     <section
       role="contentinfo"
       aria-label="Education Section"
-      className="bg-[var(--primary-color)] relative overflow-hidden text-[var(--text-color)] px-4 sm:px-6 md:px-12 "
+      className="relative overflow-hidden bg-[var(--primary-color)] text-[var(--text-color)] pt-24 pb-12 px-4 sm:px-6 md:px-12"
     >
-      <div className="mx-auto relative flex flex-col items-center py-12 animate-fadeIn">
+      <div className="container mx-auto relative flex flex-col items-center py-12 animate-fadeIn">
         <h2 className="text-4xl font-bold text-center my-8">Education</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {educationData.map((entry) => (
