@@ -43,7 +43,7 @@ const educationData: EducationEntry[] = [
       "Awarded for outstanding achievement in Mathematics, Statistics, and Probability, consistently ranking at the top of the class. Recognized for exceptional analytical and problem-solving skills that have set a benchmark for academic excellence.",
   },
   {
-    id: "2",
+    id: "3",
     schoolName: "North Fairview High School",
     yearsAttended: "2016 - 2020",
     achievements:
@@ -89,12 +89,12 @@ const EducationCard: React.FC<EducationCardProps> = ({ entry }) => {
 const Education: React.FC = () => {
   return (
     <section
-      role="contentinfo"
+      role="region"
       aria-label="Education Section"
       className="relative overflow-hidden bg-[var(--primary-color)] text-[var(--text-color)] pt-24 pb-12 px-4 sm:px-6 md:px-12"
     >
-      <div className="container mx-auto relative flex flex-col items-center py-12 animate-fadeIn">
-        <h2 className="text-4xl font-bold text-center my-8">Education</h2>
+      <div className="container mx-auto animate-fadeIn">
+        <h2 className="text-4xl font-bold text-center mb-8">Education</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {educationData.map((entry) => (
             <EducationCard key={entry.id} entry={entry} />

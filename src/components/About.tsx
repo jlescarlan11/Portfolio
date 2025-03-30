@@ -1,5 +1,14 @@
-import React from "react";
+import React, { JSX } from "react";
+import { BiLogoReact, BiLogoTailwindCss } from "react-icons/bi";
+import { CiLocationOn } from "react-icons/ci";
 import { MdOpenInNew } from "react-icons/md";
+import {
+  SiJavascript,
+  SiNodedotjs,
+  SiRedux,
+  SiTypescript,
+  SiVite,
+} from "react-icons/si";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
@@ -47,7 +56,7 @@ const projectHighlights: ProjectHighlight[] = [
   {
     id: "1",
     title: "Nutcha Bites",
-    preview: "https://nutchabites.example.com",
+    preview: "https://nutcha-bites.vercel.app/",
   },
   {
     id: "2",
@@ -61,11 +70,37 @@ const projectHighlights: ProjectHighlight[] = [
   },
 ];
 
+// -----------------------------------------------------------------------------
+// TechIcon Component
+// -----------------------------------------------------------------------------
+const techIconMap: { [key: string]: JSX.Element } = {
+  TypeScript: <SiTypescript title="TypeScript" />,
+  "Tailwind CSS": <BiLogoTailwindCss title="Tailwind CSS" />,
+  Vite: <SiVite title="Vite" />,
+  React: <BiLogoReact title="React" />,
+  Redux: <SiRedux title="Redux" />,
+  JavaScript: <SiJavascript title="TypeScript" />,
+  NodeJS: <SiNodedotjs title="Node JS" />,
+};
+
+// -----------------------------------------------------------------------------
+// TechBadge Component
+// -----------------------------------------------------------------------------
+const TechBadge: React.FC<{ tech: string }> = ({ tech }) => {
+  return (
+    <span className="inline-flex items-center gap-1 justify-start m-1 text-xs font-medium rounded-full text-[var(--text-color)">
+      {techIconMap[tech] || null} {tech}
+    </span>
+  );
+};
+
+const techStacks = ["NodeJS", "Tailwind CSS", "TypeScript", "Vite", "React"];
+
 const BioSection = () => {
   return (
     <div className="w-full md:w-3/5 md:pl-12 ">
       {/* Section Heading */}
-      <h2 className="text-3xl font-bold mb-4">About Me</h2>
+      <h2 className="text-4xl font-bold mb-4">About Me</h2>
       {/* Bio Text */}
       <p className="text-lg text-balance break-normal hyphens-auto text-justify leading-relaxed mb-6">
         I am a BS Mathematics student with a passion for web development.
@@ -73,6 +108,42 @@ const BioSection = () => {
         frontend projects that showcase my skills and dedication to learning and
         innovation.
       </p>
+      {/* Techstacks */}
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold mb-2">Tech Stacks</h3>
+        {/* 
+          The project items are rendered as interactive badges.
+          Each badge is clickable (using React Router's Link) to provide more details about the project.
+          Hover effects (scale and color change) enhance user engagement.
+        */}
+        <ul className="flex flex-wrap gap-2">
+          {techStacks.map((techStack) => (
+            <li className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]">
+              <TechBadge key={techStack} tech={techStack} />
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Project Highlights Section */}
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold mb-2">Project Highlights</h3>
+        {/* 
+          The project items are rendered as interactive badges.
+          Each badge is clickable (using React Router's Link) to provide more details about the project.
+          Hover effects (scale and color change) enhance user engagement.
+        */}
+        <ul className="flex flex-wrap gap-2">
+          {projectHighlights.map((projectHighlight) => (
+            <Link to={projectHighlight.preview} aria-label="Go to Project">
+              <li className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]">
+                {projectHighlight.title}
+                <MdOpenInNew className="text-base" />
+              </li>
+            </Link>
+          ))}
+        </ul>
+      </div>
       {/* Call-to-Action Button */}
       <div className="mb-6">
         <HashLink
@@ -90,44 +161,38 @@ const BioSection = () => {
           // - focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]: Enhanced focus for accessibility.
           className="inline-block px-6 py-3 border border-transparent text-base sm:text-lg font-medium rounded-md text-[var(--text-color)] bg-[var(--accent-color)] transition transform duration-200 hover:scale-105 hover:shadow-xl active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
         >
-          View Projects
+          View All Projects
         </HashLink>
       </div>
-      {/* Project Highlights Section */}
-      <div className="mb-6">
-        <h3 className="text-xl font-semibold mb-2">Project Highlights</h3>
-        {/* 
-          The project items are rendered as interactive badges.
-          Each badge is clickable (using React Router's Link) to provide more details about the project.
-          Hover effects (scale and color change) enhance user engagement.
-        */}
-        <ul className="flex flex-wrap gap-2">
-          {projectHighlights.map((projectHighlight) => (
-            <li className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]">
-              {projectHighlight.title}
-              <Link to={projectHighlight.preview} aria-label="Go to Project">
-                <MdOpenInNew className="text-base" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
       {/* Engagement Elements: Social Media & Resume Links */}
-      <div className="flex flex-wrap items-center space-x-4">
+      <div className="flex flex-wrap text-sm items-center space-x-4">
+        {/* Location */}
+        <p className="flex gap-1 items-center text-balance break-normal hyphens-auto text-justify leading-relaxed">
+          <CiLocationOn /> Cebu City
+        </p>
         <a
-          href="https://www.linkedin.com/in/your-profile" // Replace with your LinkedIn URL.
+          href="https://www.linkedin.com/in/john-lester-escarlan-3a23072a6/" // Replace with your LinkedIn URL.
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[var(--accent-color)] hover:underline"
+          className="text-[var(--text-color)] hover:underline"
           aria-label="LinkedIn Profile"
         >
           LinkedIn
         </a>
         <a
+          href="https://github.com/jlescarlan11" // Replace with your LinkedIn URL.
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[var(--text-color)] hover:underline"
+          aria-label="GitHub Profile"
+        >
+          GitHub
+        </a>
+        <a
           href="/resume.pdf" // Replace with your resume path.
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[var(--accent-color)] hover:underline"
+          className="text-[var(--text-color)] hover:underline"
           aria-label="Download Resume"
         >
           Resume

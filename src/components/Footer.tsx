@@ -4,9 +4,9 @@ const Footer = () => {
       <footer
         role="contentinfo"
         aria-label="Footer Section"
-        className="bg-[var(--primary-color)] border-t border-[var(--secondary-color)] text-[var(--text-color)] py-8 px-4 sm:px-6 md:px-12 animate-fadeIn"
+        className="bg-[var(--primary-color)] border-t border-[var(--secondary-color)] text-[var(--text-color)] py-8 px-4 sm:px-6 md:px-12 "
       >
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto text-center animate-fadeIn">
           {/* Copyright Notice */}
           <p className="text-sm">
             &copy; {new Date().getFullYear()} John Lester Escarlan. All rights

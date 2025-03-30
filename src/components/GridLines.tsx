@@ -1,15 +1,7 @@
-// UnfilledCircle.tsx
-import React from "react";
-
-// Define props to accept className
-interface GrigLineProps {
-  className?: string;
-}
-
-const GridLine: React.FC<GrigLineProps> = ({ className }) => {
+const GridLine = () => {
   return (
     <svg
-      className={className}
+      className="pointer-events-none w-dvw fill-[var(--primary-color)] absolute top-0 right-0 opacity-30"
       viewBox="0 0 200 200"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -19,7 +11,7 @@ const GridLine: React.FC<GrigLineProps> = ({ className }) => {
             d="M 30 0 L 0 0 0 30"
             fill="none"
             stroke="var(--secondary-color)"
-            stroke-width="0.5"
+            strokeWidth="0.5"
           />
         </pattern>
       </defs>

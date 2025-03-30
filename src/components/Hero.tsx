@@ -55,10 +55,9 @@
 // =============================================================================
 
 import React from "react";
-import { Link } from "react-router-dom";
 import UnfilledCircle from "./UnfilledCircle";
 import Circle from "./Circle";
-import GridLine from "./GridLines";
+import { HashLink } from "react-router-hash-link";
 // Import Poppins font explicitly for typography
 
 const Hero: React.FC = () => {
@@ -71,7 +70,7 @@ const Hero: React.FC = () => {
       <section
         role="banner"
         aria-label="Hero section introducing portfolio"
-        className="relative flex flex-col items-center justify-center h-screen bg-[var(--primary-color)] overflow-hidden px-6 md:px-20 py-8"
+        className=" overflow-hidden relative flex flex-col items-center justify-center h-screen bg-[var(--primary-color)] px-6 md:px-20 py-8"
         style={{ fontFamily: '"Poppins", sans-serif' }}
       >
         <UnfilledCircle className="size-40 absolute stroke-[var(--text-color)] stroke-2 -right-24 top-4 opacity-20" />
@@ -81,7 +80,6 @@ const Hero: React.FC = () => {
         />
         <Circle className="size-96 fill-[var(--text-color)] absolute  -bottom-48 -right-48 opacity-20" />
         {/* grid lines */}
-        <GridLine className="w-dvw fill-[var(--primary-color)] absolute top-0 right-0 opacity-30" />
         <UnfilledCircle className="size-40 absolute stroke-[var(--text-color)] stroke-2 left-4 -bottom-24 opacity-20" />
 
         {/*
@@ -100,7 +98,7 @@ const Hero: React.FC = () => {
             animation: gradientShift 10s ease infinite;
           }
       */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-color)] to-[var(--secondary-color)] opacity-60 animate-gradient"></div>
+        <div className="z-10 absolute inset-0 bg-gradient-to-br from-[var(--primary-color)] to-[var(--secondary-color)] opacity-60 animate-gradient"></div>
         {/*
         Content Container:
         - Positioned above the overlay using a higher z-index.
@@ -133,8 +131,9 @@ const Hero: React.FC = () => {
           - ARIA attributes provide descriptive labeling for assistive technologies.
         */}
           <div className="mt-8">
-            <Link
-              to="/portfolio"
+            <HashLink
+              smooth
+              to="/#portfolio"
               role="button"
               aria-label="View My Work"
               className="inline-block px-6 py-3 border border-transparent text-base md:text-lg font-medium rounded-md 
@@ -143,7 +142,7 @@ const Hero: React.FC = () => {
                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
             >
               View My Work
-            </Link>
+            </HashLink>
           </div>
         </div>
       </section>
