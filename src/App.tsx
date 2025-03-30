@@ -17,8 +17,9 @@ const App: React.FC = () => {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.4, // Adjust threshold as needed
+      threshold: 0.1, // Adjust threshold as needed
     };
+    console.log(sections);
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
