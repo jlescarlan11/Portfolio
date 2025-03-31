@@ -11,6 +11,7 @@ import {
 } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import Resume from "../assets/Resume.pdf";
 
 interface PhotoSectionProps {
   photoUrl?: string;
@@ -114,7 +115,7 @@ const BioSection = () => {
       </p>
       {/* Techstacks */}
       <div className="mb-6">
-        <h3 className="text-xl font-semibold mb-2">Tools Used</h3>
+        <h3 className="text-xl font-semibold mb-2">Tools</h3>
         {/* 
           The project items are rendered as interactive badges.
           Each badge is clickable (using React Router's Link) to provide more details about the project.
@@ -181,7 +182,7 @@ const BioSection = () => {
           <CiLocationOn /> Cebu City
         </p>
         <a
-          href="https://www.linkedin.com/in/john-lester-escarlan-3a23072a6/" // Replace with your LinkedIn URL.
+          href="https://www.linkedin.com/in/john-lester-escarlan-3a23072a6/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--text-color)] hover:underline"
@@ -190,7 +191,7 @@ const BioSection = () => {
           LinkedIn
         </a>
         <a
-          href="https://github.com/jlescarlan11" // Replace with your LinkedIn URL.
+          href="https://github.com/jlescarlan11"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--text-color)] hover:underline"
@@ -199,7 +200,7 @@ const BioSection = () => {
           GitHub
         </a>
         <a
-          href="/resume.pdf" // Replace with your resume path.
+          href={Resume}
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--text-color)] hover:underline"
@@ -238,7 +239,7 @@ const About: React.FC<AboutMeProps> = ({ photoUrl, showPhoto = true }) => {
         aria-label="About Me Section"
         className="relative overflow-hidden bg-[var(--primary-color)] text-[var(--text-color)] pt-24 pb-12 px-4 sm:px-6 md:px-12"
       >
-        <div className="container mx-auto flex flex-col md:flex-row items-center animate-fadeIn">
+        <div className="container mx-auto flex flex-col md:flex-row items-start animate-fadeIn">
           <PhotoSection photoUrl={photoUrl} showPhoto={showPhoto} />
           <BioSection />
         </div>
