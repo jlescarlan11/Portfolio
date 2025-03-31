@@ -14,6 +14,8 @@ import {
   SiRedux,
   SiJavascript,
   SiNodedotjs,
+  SiHtml5,
+  SiCss3,
 } from "react-icons/si";
 import nutchaBitesOverview from "../assets/projects/project-nutcha-bites.jpg";
 import bookLibraryPreview from "../assets/projects/project-book-library.jpg";
@@ -47,6 +49,8 @@ const techIconMap: { [key: string]: JSX.Element } = {
   Redux: <SiRedux title="Redux" />,
   JavaScript: <SiJavascript title="TypeScript" />,
   NodeJS: <SiNodedotjs title="Node JS" />,
+  HTML: <SiHtml5 title="HTML" />,
+  CSS: <SiCss3 title="CSS" />,
 };
 
 // -----------------------------------------------------------------------------
@@ -142,7 +146,7 @@ const projects: Project[] = [
       "A simple game that randomly shuffles cards to test your memory.",
     thumbnail: `${memoryGamePreview}`,
     preview: "https://pokemon-memory-game-olive.vercel.app/",
-    techStack: ["React"],
+    techStack: ["React", "Vite", "CSS"],
   },
   {
     id: "4",
@@ -150,7 +154,7 @@ const projects: Project[] = [
     description: "A book library that stores a collection of books locally.",
     thumbnail: `${bookLibraryPreview}`,
     preview: "https://jlescarlan11.github.io/book-library/",
-    techStack: ["JavaScript"],
+    techStack: ["HTML", "CSS", "JavaScript"],
   },
   {
     id: "5",
@@ -159,7 +163,7 @@ const projects: Project[] = [
       "A simple rock paper scissor game that challenges computer with its random pick.",
     thumbnail: `${rpsPreview}`,
     preview: "https://jlescarlan11.github.io/rock-paper-scissor/",
-    techStack: ["JavaScript"],
+    techStack: ["HTML", "CSS", "JavaScript"],
   },
   {
     id: "6",
@@ -167,7 +171,7 @@ const projects: Project[] = [
     description: "A simple calculator app that computes a simple calculation.",
     thumbnail: `${calculatorPreview}`,
     preview: "https://jlescarlan11.github.io/calculator/",
-    techStack: ["JavaScript"],
+    techStack: ["HTML", "CSS", "JavaScript"],
   },
   {
     id: "7",

@@ -103,14 +103,18 @@ const BioSection = () => {
       <h2 className="text-4xl font-bold mb-4">About Me</h2>
       {/* Bio Text */}
       <p className="text-lg text-wrap break-normal hyphens-auto text-justify leading-relaxed mb-6">
-        I am a BS Mathematics student with a passion for web development.
-        Although my professional experience is limited, I have completed several
-        frontend projects that showcase my skills and dedication to learning and
-        innovation.
+        I am a Mathematics Major at the University of the Philippines who loves
+        building web applications. I’ve built projects like a product website, a
+        memory game, and a book library using tools such as React, Vite,
+        Tailwind CSS, HTML, and JavaScript. I also work with Python, C, C++, and
+        can manage databases with MySQL and PostgreSQL. My coursework in data
+        structures, computation theory, and databases has given me a solid
+        technical foundation, and lastly, I enjoy turning ideas into a simple,
+        user-friendly solutions.
       </p>
       {/* Techstacks */}
       <div className="mb-6">
-        <h3 className="text-xl font-semibold mb-2">Tech Stacks</h3>
+        <h3 className="text-xl font-semibold mb-2">Tools Used</h3>
         {/* 
           The project items are rendered as interactive badges.
           Each badge is clickable (using React Router's Link) to provide more details about the project.
