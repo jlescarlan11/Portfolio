@@ -181,33 +181,33 @@ const BioSection = () => {
         <p className="flex gap-1 items-center text-balance break-normal hyphens-auto text-justify leading-relaxed">
           <CiLocationOn /> Cebu City
         </p>
-        <a
-          href="https://www.linkedin.com/in/john-lester-escarlan-3a23072a6/"
+        <Link
+          to="https://www.linkedin.com/in/john-lester-escarlan-3a23072a6/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--text-color)] hover:underline"
           aria-label="LinkedIn Profile"
         >
           LinkedIn
-        </a>
-        <a
-          href="https://github.com/jlescarlan11"
+        </Link>
+        <Link
+          to="https://github.com/jlescarlan11"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--text-color)] hover:underline"
           aria-label="GitHub Profile"
         >
           GitHub
-        </a>
-        <a
-          href={Resume}
+        </Link>
+        <Link
+          to={Resume}
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--text-color)] hover:underline"
           aria-label="Download Resume"
         >
           Resume
-        </a>
+        </Link>
       </div>
     </div>
   );

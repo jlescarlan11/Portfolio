@@ -30,7 +30,7 @@ import { MdOpenInNew } from "react-icons/md";
 // Project Interface
 // -----------------------------------------------------------------------------
 interface Project {
-  id: string;
+  id?: string;
   title: string;
   description: string;
   thumbnail: string; // Path to the project thumbnail image.
@@ -122,7 +122,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 // -----------------------------------------------------------------------------
 const projects: Project[] = [
   {
-    id: "1",
     title: "Nutcha Bites",
     description:
       "Nutcha Bites is a product website designed to replicate the experience of a genuine shopping app. I built this site to complement the product aspect of my business proposal.",
@@ -131,7 +130,6 @@ const projects: Project[] = [
     techStack: ["TypeScript", "Tailwind CSS", "Vite", "React"],
   },
   {
-    id: "2",
     title: "Shopping Cart",
     description:
       "A simple shopping cart that calls the product by fake store api. This project emulates the shopping app that add to cart, checkout, remove, and updating orders",
@@ -140,7 +138,6 @@ const projects: Project[] = [
     techStack: ["Tailwind CSS", "Vite", "React"],
   },
   {
-    id: "3",
     title: "Memory Game",
     description:
       "A simple game that randomly shuffles cards to test your memory.",
@@ -149,7 +146,14 @@ const projects: Project[] = [
     techStack: ["React", "Vite", "CSS"],
   },
   {
-    id: "4",
+    title: "CV Builder",
+    description:
+      "A simple CV builder that asks some information about you then automatically build a CV to download.",
+    thumbnail: `${cvBuilderPreview}`,
+    preview: "https://cv-application-five-pink.vercel.app/",
+    techStack: ["React", "Vite"],
+  },
+  {
     title: "Book Library",
     description: "A book library that stores a collection of books locally.",
     thumbnail: `${bookLibraryPreview}`,
@@ -157,7 +161,6 @@ const projects: Project[] = [
     techStack: ["HTML", "CSS", "JavaScript"],
   },
   {
-    id: "5",
     title: "Rock Paper Scissor",
     description:
       "A simple rock paper scissor game that challenges computer with its random pick.",
@@ -166,21 +169,11 @@ const projects: Project[] = [
     techStack: ["HTML", "CSS", "JavaScript"],
   },
   {
-    id: "6",
     title: "Calculator",
     description: "A simple calculator app that computes a simple calculation.",
     thumbnail: `${calculatorPreview}`,
     preview: "https://jlescarlan11.github.io/calculator/",
     techStack: ["HTML", "CSS", "JavaScript"],
-  },
-  {
-    id: "7",
-    title: "CV Builder",
-    description:
-      "A simple CV builder that asks some information about you then automatically build a CV to download.",
-    thumbnail: `${cvBuilderPreview}`,
-    preview: "https://cv-application-five-pink.vercel.app/",
-    techStack: ["React", "Vite"],
   },
 
   // Additional projects can be added here.
@@ -204,8 +197,8 @@ const Portfolio: React.FC = () => {
           role="list"
           className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
           ))}
         </div>
       </div>
