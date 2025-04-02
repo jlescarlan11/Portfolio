@@ -63,8 +63,8 @@ const Contact: React.FC = () => {
           - aria-label clarifies the button's function for assistive technologies.
         */}
         <a
-          href="mailto:jlescarlan11@gmail.com"
-          aria-label="Send email to jlescarlan11@gmail.com"
+          href="mailto:jnescarlan@up.edu.ph"
+          aria-label="Send email to jnescarlan@up.edu.ph"
           className="inline-block bg-[var(--accent-color)] text-[var(--text-color)] font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-[var(--secondary-color)] hover:scale-105 hover:animate-pulse focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
         >
           Let's Get in Touch

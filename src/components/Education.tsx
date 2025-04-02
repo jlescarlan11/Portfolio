@@ -40,7 +40,7 @@ const educationData: EducationEntry[] = [
     schoolName: "South East Asia Institute of Trade and Technology",
     yearsAttended: "2020 - 2022",
     achievements:
-      "Awarded for outstanding achievement in Mathematics, Statistics, and Probability, consistently ranking at the top of the class. Recognized for exceptional analytical and problem-solving skills that have set a benchmark for academic excellence.",
+      "Awarded for outstanding achievement in Mathematics, and Statistics and Probability, consistently ranking at the top of the class. Recognized for exceptional analytical and problem-solving skills that have set a benchmark for academic excellence.",
   },
   {
     id: "3",
@@ -49,7 +49,6 @@ const educationData: EducationEntry[] = [
     achievements:
       "Graduated with Honors, demonstrating a commitment to academic excellence; achieved 1st Place in the 2019 Math Quiz Bowl and advanced as a District-Level Qualifier in the Damath Competition, underscoring exceptional analytical skills and competitive drive.",
   },
-  // Additional entries can be added here.
 ];
 
 // -----------------------------------------------------------------------------
