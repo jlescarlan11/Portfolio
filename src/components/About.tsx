@@ -3,8 +3,15 @@ import { BiLogoReact, BiLogoTailwindCss } from "react-icons/bi";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOpenInNew } from "react-icons/md";
 import {
+  SiC,
+  SiCplusplus,
+  SiCss3,
+  SiHtml5,
   SiJavascript,
+  SiMysql,
   SiNodedotjs,
+  SiPostgresql,
+  SiPython,
   SiRedux,
   SiTypescript,
   SiVite,
@@ -75,6 +82,13 @@ const projectHighlights: ProjectHighlight[] = [
 // TechIcon Component
 // -----------------------------------------------------------------------------
 const techIconMap: { [key: string]: JSX.Element } = {
+  HTML: <SiHtml5 title="HTML" />,
+  CSS: <SiCss3 title="CSS" />,
+  Python: <SiPython title="Python" />,
+  C: <SiC title="C" />,
+  "C++": <SiCplusplus title="C++" />,
+  "My SQL": <SiMysql title="MySQL" />,
+  PostgreSQL: <SiPostgresql title="PostgreSQL" />,
   TypeScript: <SiTypescript title="TypeScript" />,
   "Tailwind CSS": <BiLogoTailwindCss title="Tailwind CSS" />,
   Vite: <SiVite title="Vite" />,
@@ -95,7 +109,20 @@ const TechBadge: React.FC<{ tech: string }> = ({ tech }) => {
   );
 };
 
-const techStacks = ["NodeJS", "Tailwind CSS", "TypeScript", "Vite", "React"];
+const techStacks = [
+  "NodeJS",
+  "React",
+  "Vite",
+  "Tailwind CSS",
+  "TypeScript",
+  "My SQL",
+  "PostgreSQL",
+  "HTML",
+  "CSS",
+  "Python",
+  "C",
+  "C++",
+];
 
 const BioSection = () => {
   return (
