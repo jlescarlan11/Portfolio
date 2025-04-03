@@ -6,6 +6,8 @@ import {
   SiC,
   SiCplusplus,
   SiCss3,
+  SiEjs,
+  SiExpress,
   SiHtml5,
   SiJavascript,
   SiMysql,
@@ -62,19 +64,19 @@ interface ProjectHighlight {
 
 const projectHighlights: ProjectHighlight[] = [
   {
-    id: "1",
+    id: "3",
+    title: "Freedom Wall",
+    preview: "https://web-production-2b2eb.up.railway.app/",
+  },
+  {
+    id: "2",
     title: "Nutcha Bites",
     preview: "https://nutcha-bites.vercel.app/",
   },
   {
-    id: "2",
+    id: "3",
     title: "Shopping Cart",
     preview: "https://shopping-cart-ivory-ten.vercel.app/",
-  },
-  {
-    id: "3",
-    title: "Memory Game",
-    preview: "https://pokemon-memory-game-olive.vercel.app/",
   },
 ];
 
@@ -96,6 +98,8 @@ const techIconMap: { [key: string]: JSX.Element } = {
   Redux: <SiRedux title="Redux" />,
   JavaScript: <SiJavascript title="TypeScript" />,
   NodeJS: <SiNodedotjs title="Node JS" />,
+  EJS: <SiEjs title="EJS" />,
+  Express: <SiExpress title="Express" />,
 };
 
 // -----------------------------------------------------------------------------
@@ -111,6 +115,8 @@ const TechBadge: React.FC<{ tech: string }> = ({ tech }) => {
 
 const techStacks = [
   "NodeJS",
+  "Express",
+  "EJS",
   "React",
   "Vite",
   "Tailwind CSS",

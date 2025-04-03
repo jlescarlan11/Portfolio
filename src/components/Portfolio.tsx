@@ -16,6 +16,8 @@ import {
   SiNodedotjs,
   SiHtml5,
   SiCss3,
+  SiEjs,
+  SiExpress,
 } from "react-icons/si";
 import nutchaBitesOverview from "../assets/projects/project-nutcha-bites.jpg";
 import bookLibraryPreview from "../assets/projects/project-book-library.jpg";
@@ -24,6 +26,7 @@ import calculatorPreview from "../assets/projects/project-calculator.jpg";
 import cvBuilderPreview from "../assets/projects/cv-builder.jpg";
 import memoryGamePreview from "../assets/projects/memory-game.jpg";
 import shoppingCartPreview from "../assets/projects/shopping-cart.jpg";
+import freedomWallOverview from "../assets/projects/freedom-wall.jpg";
 import { MdOpenInNew } from "react-icons/md";
 
 // -----------------------------------------------------------------------------
@@ -51,6 +54,8 @@ const techIconMap: { [key: string]: JSX.Element } = {
   NodeJS: <SiNodedotjs title="Node JS" />,
   HTML: <SiHtml5 title="HTML" />,
   CSS: <SiCss3 title="CSS" />,
+  EJS: <SiEjs title="EJS" />,
+  Express: <SiExpress title="Express" />,
 };
 
 // -----------------------------------------------------------------------------
@@ -121,6 +126,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 // Sample Project Data
 // -----------------------------------------------------------------------------
 const projects: Project[] = [
+  {
+    title: "Freedom Wall",
+    description:
+      "Freedom Wall is a community-driven platform designed for users to freely share their thoughts, concerns, and unspoken feelings.",
+    thumbnail: `${freedomWallOverview}`,
+    preview: "https://web-production-2b2eb.up.railway.app/",
+    techStack: ["CSS", "EJS", "JavaScript", "Express"],
+  },
   {
     title: "Nutcha Bites",
     description:
