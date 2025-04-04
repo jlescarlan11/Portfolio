@@ -136,7 +136,7 @@ const BioSection = () => {
       {/* Section Heading */}
       <h2 className="text-4xl font-bold mb-4">About Me</h2>
       {/* Bio Text */}
-      <p className="text-lg text-pretty  text-justify leading-relaxed mb-6">
+      <p className="text-lg text-pretty hyphens-auto  text-justify leading-relaxed mb-6">
         I am a Mathematics Major at the University of the Philippines who loves
         building web applications. I’ve built projects like a product website, a
         memory game, and a book library using tools such as React, Vite,

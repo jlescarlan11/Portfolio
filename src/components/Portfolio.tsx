@@ -96,7 +96,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.title}
         </h3>
         {/* Description */}
-        <p className="text-sm mb-4 text-[var(--text-color)] text-pretty text-justify">
+        <p className="text-sm mb-4 text-[var(--text-color)] text-pretty hyphens-auto text-justify">
           {project.description}
         </p>
         {/* Tech Stack Badges */}
