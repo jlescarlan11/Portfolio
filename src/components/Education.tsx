@@ -72,7 +72,7 @@ const EducationCard: React.FC<EducationCardProps> = ({ entry }) => {
         <span className="text-[var(--text-color)]">{entry.schoolName}</span>
       </h3>
       <p className="text-base mb-1">{entry.yearsAttended}</p>
-      <p className="text-base font-extralight text-wrap break-normal hyphens-auto text-justify">
+      <p className="text-base font-extralight text-pretty  text-justify">
         <span className="font-semibold text-[var(--text-color)]">
           Achievements:{" "}
         </span>
