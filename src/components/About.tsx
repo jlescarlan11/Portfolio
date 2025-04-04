@@ -139,12 +139,12 @@ const BioSection = () => {
       <p className="text-lg text-pretty hyphens-auto  text-justify leading-relaxed mb-6">
         I am a Mathematics Major at the University of the Philippines who loves
         building web applications. I’ve built projects like a product website, a
-        memory game, and a book library using tools such as React, Vite,
-        Tailwind CSS, HTML, and JavaScript. I also work with Python, C, C++, and
-        can manage databases with MySQL and PostgreSQL. My coursework in data
-        structures, computation theory, and databases has given me a solid
-        technical foundation, and lastly, I enjoy turning ideas into a simple,
-        user-friendly solutions.
+        freedom wall, and a book library using tools such as React, Vite,
+        Tailwind CSS, HTML, JavaScript, and Express. I can also work with
+        Python, C, C++, and can manage databases with MySQL and PostgreSQL. My
+        coursework in data structures, computation theory, and databases has
+        given me a solid technical foundation, and lastly, I enjoy turning ideas
+        into a simple, user-friendly solutions.
       </p>
       {/* Techstacks */}
       <div className="mb-6">
@@ -179,10 +179,11 @@ const BioSection = () => {
             <Link
               key={index}
               to={projectHighlight.preview}
-              className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] hover:animate-pulse cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]"
+              className="flex flex-row items-center justify-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] hover:animate-pulse cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]"
               aria-label="Go to Project"
             >
               {projectHighlight.title}
+              {""}
               <MdOpenInNew className="text-base" />
             </Link>
           ))}
