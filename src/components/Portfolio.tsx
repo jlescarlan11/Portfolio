@@ -111,7 +111,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             href={project.preview}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition text-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition-all duration-300 ease-in-out hover:animate-pulse text-sm"
             aria-label={`Preview ${project.title}`}
           >
             Preview <MdOpenInNew />

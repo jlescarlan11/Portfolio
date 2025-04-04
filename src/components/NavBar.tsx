@@ -21,7 +21,7 @@ const HashLinkItem: React.FC<HashLinkItemProps> = ({
 }) => {
   const computedClassName = `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 
     hover:text-[var(--accent-color)] hover:underline 
-    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]
+    focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]
     ${
       isActive ? "text-[var(--text-color)]" : "text-[var(--secondary-color)]"
     } ${extraClasses}`;

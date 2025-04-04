@@ -154,11 +154,11 @@ const BioSection = () => {
           Each badge is clickable (using React Router's Link) to provide more details about the project.
           Hover effects (scale and color change) enhance user engagement.
         */}
-        <ul className="flex flex-wrap gap-2">
+        <ul className="flex flex-wrap gap-2 ">
           {techStacks.map((techStack) => (
             <li
               key={techStack}
-              className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]"
+              className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)] hover:animate-pulse"
             >
               <TechBadge tech={techStack} />
             </li>
@@ -179,7 +179,7 @@ const BioSection = () => {
             <Link
               key={index}
               to={projectHighlight.preview}
-              className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]"
+              className="flex flex-row items-center gap-1 px-3 py-1 bg-[var(--accent-color)] rounded-full text-sm text-[var(--text-color)] hover:animate-pulse cursor-pointer transition transform duration-200 hover:scale-105 hover:bg-[var(--secondary-color)]"
               aria-label="Go to Project"
             >
               {projectHighlight.title}
@@ -203,7 +203,7 @@ const BioSection = () => {
           // - transition transform duration-200: Smooth interactive feedback.
           // - hover:scale-105 hover:shadow-xl, active:scale-95: Subtle hover and click animations.
           // - focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]: Enhanced focus for accessibility.
-          className="inline-block px-6 py-3 border border-transparent text-base sm:text-lg font-medium rounded-md text-[var(--text-color)] bg-[var(--accent-color)] transition transform duration-200 hover:scale-105 hover:shadow-xl active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
+          className="inline-block px-6 py-3 border border-transparent  hover:animate-pulse text-base sm:text-lg font-medium rounded-md text-[var(--text-color)] bg-[var(--accent-color)] transition transform duration-200 hover:scale-105 hover:shadow-xl active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
         >
           View All Projects
         </HashLink>

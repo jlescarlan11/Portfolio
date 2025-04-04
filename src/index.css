@@ -4,14 +4,14 @@
 @tailwind utilities;
 
 :root {
-  /* --primary-color: rgb(27, 38, 44);
-    --secondary-color: rgb(15, 76, 117);
-    --accent-color: rgb(15, 76, 117);
-    --text-color: rgb(187, 225, 250); */
-  --primary-color: rgb(34, 40, 49);
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgb(62, 54, 54);
+  --accent-color: rgb(215, 35, 35);
+  --text-color: rgb(245, 237, 237);
+  /* --primary-color: rgb(34, 40, 49);
   --secondary-color: rgb(57, 62, 70);
   --accent-color: rgb(0, 173, 181);
-  --text-color: rgb(238, 238, 238);
+  --text-color: rgb(238, 238, 238); */
 }
 
 body {
