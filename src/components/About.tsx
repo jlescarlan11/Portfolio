@@ -65,18 +65,18 @@ interface ProjectHighlight {
 const projectHighlights: ProjectHighlight[] = [
   {
     id: "1",
+    title: "PokeInventory",
+    preview: "https://inventory-application-xiyr.onrender.com/",
+  },
+  {
+    id: "2",
     title: "Freedom Wall",
     preview: "https://web-production-2b2eb.up.railway.app/",
   },
   {
-    id: "2",
+    id: "3",
     title: "Nutcha Bites",
     preview: "https://nutcha-bites.vercel.app/",
-  },
-  {
-    id: "3",
-    title: "PokeInventory",
-    preview: "https://inventory-application-xiyr.onrender.com/",
   },
 ];
 

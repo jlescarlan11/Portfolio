@@ -26,8 +26,8 @@ import calculatorPreview from "../assets/projects/project-calculator.jpg";
 import cvBuilderPreview from "../assets/projects/cv-builder.jpg";
 import memoryGamePreview from "../assets/projects/memory-game.jpg";
 import shoppingCartPreview from "../assets/projects/shopping-cart.jpg";
-import freedomWallOverview from "../assets/projects/freedom-wall.jpg";
-import pokemonInventoryOverview from "../assets/projects/pokemon-inventory.jpg";
+import freedomWallOverview from "../assets/projects/freedom-wall.png";
+import pokemonInventoryOverview from "../assets/projects/pokemon-inventory.png";
 import { MdOpenInNew } from "react-icons/md";
 
 // -----------------------------------------------------------------------------
