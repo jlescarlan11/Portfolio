@@ -64,7 +64,7 @@ interface ProjectHighlight {
 
 const projectHighlights: ProjectHighlight[] = [
   {
-    id: "3",
+    id: "1",
     title: "Freedom Wall",
     preview: "https://web-production-2b2eb.up.railway.app/",
   },
@@ -75,8 +75,8 @@ const projectHighlights: ProjectHighlight[] = [
   },
   {
     id: "3",
-    title: "Shopping Cart",
-    preview: "https://shopping-cart-ivory-ten.vercel.app/",
+    title: "PokeInventory",
+    preview: "https://inventory-application-xiyr.onrender.com/",
   },
 ];
 

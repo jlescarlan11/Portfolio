@@ -27,6 +27,7 @@ import cvBuilderPreview from "../assets/projects/cv-builder.jpg";
 import memoryGamePreview from "../assets/projects/memory-game.jpg";
 import shoppingCartPreview from "../assets/projects/shopping-cart.jpg";
 import freedomWallOverview from "../assets/projects/freedom-wall.jpg";
+import pokemonInventoryOverview from "../assets/projects/pokemon-inventory.jpg";
 import { MdOpenInNew } from "react-icons/md";
 
 // -----------------------------------------------------------------------------
@@ -126,6 +127,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 // Sample Project Data
 // -----------------------------------------------------------------------------
 const projects: Project[] = [
+  {
+    title: "PokeInventory",
+    description:
+      "PokeInventory is an inventory app that uses CRUD functionaly.",
+    thumbnail: `${pokemonInventoryOverview}`,
+    preview: "https://inventory-application-xiyr.onrender.com/",
+    techStack: ["Express", "NodeJS", "Tailwind CSS", "EJS", "JavaScript"],
+  },
   {
     title: "Freedom Wall",
     description:
