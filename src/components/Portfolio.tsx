@@ -97,7 +97,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.title}
         </h3>
         {/* Description */}
-        <p className="text-sm mb-4 text-[var(--text-color)] text-pretty hyphens-auto text-justify">
+        <p className="text-sm mb-4 text-[var(--text-color)] text-pretty hyphens-auto text-start">
           {project.description}
         </p>
         {/* Tech Stack Badges */}
@@ -130,7 +130,7 @@ const projects: Project[] = [
   {
     title: "PokeInventory",
     description:
-      "PokeInventory is an inventory app that uses CRUD functionaly.",
+      "A full-stack web application for organizing Pokémon collections with secure CRUD operations and search functionality.",
     thumbnail: `${pokemonInventoryOverview}`,
     preview: "https://inventory-application-xiyr.onrender.com/",
     techStack: ["Express", "Tailwind CSS", "EJS", "JavaScript"],
@@ -138,7 +138,7 @@ const projects: Project[] = [
   {
     title: "Freedom Wall",
     description:
-      "Freedom Wall is a community-driven platform designed for users to freely share their thoughts, concerns, and unspoken feelings.",
+      "A community platform for users to share thoughts, concerns, and unspoken feelings.",
     thumbnail: `${freedomWallOverview}`,
     preview: "https://web-production-2b2eb.up.railway.app/",
     techStack: ["CSS", "EJS", "JavaScript", "Express"],
@@ -146,7 +146,7 @@ const projects: Project[] = [
   {
     title: "Nutcha Bites",
     description:
-      "Nutcha Bites is a product website designed to replicate the experience of a genuine shopping app. I built this site to complement the product aspect of my business proposal.",
+      "A product website that replicates the experience of a genuine shopping application.",
     thumbnail: `${nutchaBitesOverview}`,
     preview: "https://nutcha-bites.vercel.app/",
     techStack: ["TypeScript", "Tailwind CSS", "Vite", "React"],

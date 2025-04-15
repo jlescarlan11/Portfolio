@@ -136,15 +136,20 @@ const BioSection = () => {
       {/* Section Heading */}
       <h2 className="text-4xl font-bold mb-4">About Me</h2>
       {/* Bio Text */}
-      <p className="text-lg text-pretty hyphens-auto  text-justify leading-relaxed mb-6">
-        I am a Mathematics Major at the University of the Philippines who loves
-        building web applications. I’ve built projects like a product website, a
-        freedom wall, and a book library using tools such as React, Vite,
-        Tailwind CSS, HTML, JavaScript, and Express. I can also work with
-        Python, C, C++, and can manage databases with MySQL and PostgreSQL. My
-        coursework in data structures, computation theory, and databases has
-        given me a solid technical foundation, and lastly, I enjoy turning ideas
-        into a simple, user-friendly solutions.
+      <p className="text-lg text-pretty text-start leading-relaxed mb-6">
+        As a Mathematics Major at the University of the Philippines, I’ve honed
+        my analytical mindset into becoming a self-taught full-stack web
+        developer, starting my journey through The Odin Project’s rigorous
+        curriculum. I build user-centric applications from frontend to backend,
+        leveraging modern tools like React, Vite, and Tailwind CSS for
+        responsive interfaces, with Express.js and PostgreSQL/MySQL for
+        server-side logic and database management. My projects—including pokemon
+        inventory, a product website, and a community-driven freedom wall
+        system—reflect my ability to transform ideas into clean, functional
+        solutions. I am also proficient in Python, C, and C++, which helps me
+        use my mathematics background to solve machine problems. Whether
+        crafting intuitive UIs or optimizing data flows, I prioritize simplicity
+        and usability at every stage.
       </p>
       {/* Techstacks */}
       <div className="mb-6">
