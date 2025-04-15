@@ -133,7 +133,7 @@ const projects: Project[] = [
       "PokeInventory is an inventory app that uses CRUD functionaly.",
     thumbnail: `${pokemonInventoryOverview}`,
     preview: "https://inventory-application-xiyr.onrender.com/",
-    techStack: ["Express", "NodeJS", "Tailwind CSS", "EJS", "JavaScript"],
+    techStack: ["Express", "Tailwind CSS", "EJS", "JavaScript"],
   },
   {
     title: "Freedom Wall",
