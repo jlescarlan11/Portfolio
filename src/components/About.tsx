@@ -272,8 +272,8 @@ const BioSection: React.FC = memo(() => {
         >
           GitHub
         </Link>
-        <Link
-          to={Resume}
+        <a
+          href={Resume}
           target="_blank"
           download="John_Escarlan_Resume.pdf"
           rel="noopener noreferrer"
@@ -281,7 +281,7 @@ const BioSection: React.FC = memo(() => {
           aria-label="Download Resume"
         >
           Resume
-        </Link>
+        </a>
       </div>
 
       {/* <div className="mt-4 p-4 bg-[var(--secondary-color)] rounded">
