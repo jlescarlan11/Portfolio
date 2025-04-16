@@ -141,6 +141,8 @@ const PhotoSection: React.FC<PhotoSectionProps> = memo(
           src={photoUrl ? photoUrl : defaultPhoto}
           loading="lazy"
           alt="John Escarlan Professional Portrait"
+          width="500"
+          height="500"
           className="rounded-full max-w-full md:max-w-full object-cover border-4 border-[var(--accent-color)] transform hover:scale-105 transition duration-300"
         />
       </div>
