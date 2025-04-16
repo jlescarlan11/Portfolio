@@ -178,7 +178,11 @@ const projects: Project[] = [
     code: undefined,
     techStack: ["Express", "EJS", "JavaScript", "CSS", "PostgreSQL"],
     category: ["full-stack", "backend"],
-    features: ["Post moderation", "Responsive design"],
+    features: [
+      "Create and Read posts",
+      "Error handling middleware",
+      "Search and filter functionality",
+    ],
   },
   {
     title: "Nutcha Bites",
@@ -190,9 +194,10 @@ const projects: Project[] = [
     techStack: ["React", "TypeScript", "Tailwind CSS"],
     category: ["frontend"],
     features: [
-      "Responsive mobile-first design",
       "Shopping cart",
       "Checkout functionality",
+      "Emulated payment gateway",
+      "Downloadable Invoice",
     ],
   },
   {
