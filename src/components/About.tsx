@@ -21,7 +21,7 @@ import {
 } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import Resume from "../assets/Resume.pdf";
+import Resume from "../assets/John Lester Escarlan.pdf";
 
 const techIconMap: { [key: string]: JSX.Element } = {
   HTML: <SiHtml5 title="HTML" role="img" aria-label="HTML" />,
