@@ -155,20 +155,13 @@ const BioSection: React.FC = memo(() => {
     <div className="w-full md:w-3/5 md:pl-12">
       <h2 className="text-4xl font-bold mb-4">About Me</h2>
       <p className="text-base text-pretty text-start leading-relaxed mb-4">
-        Mathematics major and self-taught full-stack developer passionate about
-        building impactful web solutions. I have successfully built applications
-        that:
+        A mathematics major and self-taught full-stack developer with expertise
+        in creating end-to-end web solutions. Proficient in modern frontend
+        (React, Tailwind CSS) and backend (Express.js, PostgreSQL/MySQL)
+        technologies, as well as programming in Python, C, and C++. Passionate
+        about developing intuitive, scalable applications that drive measurable
+        improvements.
       </p>
-      <ul className="list-disc pl-6 mb-6 text-base text-pretty">
-        <li>
-          Optimize React applications to achieve a Lighthouse Performance score
-          of 90+.
-        </li>
-        <li>
-          Reduced SQL response times by 30% through strategic query
-          optimization.
-        </li>
-      </ul>
 
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2">Core Stack</h3>
