@@ -52,12 +52,9 @@ interface NavbarProps {
  */
 const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [logoError, setLogoError] = useState<boolean>(false);
   // New state to track scroll position
   const [scrolled, setScrolled] = useState<boolean>(false);
-
   const toggleMenu = (): void => setIsOpen(!isOpen);
-  const handleLogoError = (): void => setLogoError(true);
 
   // Set up scroll listener to update navbar background opacity
   useEffect(() => {
@@ -95,19 +92,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           {/* Logo Section */}
           <div className="flex items-center">
             <HashLink to="/#hero" className="flex items-center">
-              {!logoError ? (
-                <img
-                  // src="/logo.png"
-                  src=""
-                  alt="My Portfolio Logo"
-                  className="h-8 w-auto mr-2"
-                  onError={handleLogoError}
-                />
-              ) : (
-                <span className="h-8 w-auto mr-2 p-1 border border-[var(--text-color)] rounded-full text-sm font-bold">
-                  JLE
-                </span>
-              )}
+              <span className="h-8 w-auto mr-2 p-1 border border-[var(--text-color)] rounded-full text-sm font-bold">
+                JLE
+              </span>
+
               <span className="text-xl font-bold">My Portfolio</span>
             </HashLink>
           </div>
