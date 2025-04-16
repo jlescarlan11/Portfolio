@@ -111,10 +111,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
     </div>
 
     <div className="p-4">
-      <h3 className="text-2xl font-bold mb-2 text-[var(--text-color)]">
-        {project.title}
+      <h3 className="text-base sm:text-xl font-semibold mb-2">
+        {project.title.toLocaleUpperCase()}
       </h3>
-      <p className="text-sm mb-4 text-[var(--text-color)] hyphens-auto">
+      <p className="text-xs mb-4 text-[var(--text-color)] hyphens-auto">
         {project.description}
       </p>
 
@@ -129,10 +129,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
           href={project.preview}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 bg-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition-colors text-sm"
+          className="flex items-center gap-2 px-4 py-2 bg-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition-colors text-xs"
           aria-label={`Live demo of ${project.title}`}
         >
-          Live Demo <MdOpenInNew />
+          Live Demo <MdOpenInNew className="text-xs" />
         </a>
         {project.code && (
           <a
@@ -281,7 +281,9 @@ const Portfolio: React.FC = () => {
       className="relative overflow-hidden bg-[var(--primary-color)] text-[var(--text-color)] pt-24 pb-12 px-4 sm:px-6 md:px-12"
     >
       <div className="container mx-auto animate-fadeIn">
-        <h2 className="text-4xl font-bold text-center mb-8">My Portfolio</h2>
+        <h2 className="text-2xl text-center sm:text-4xl font-bold mb-4">
+          PORTFOLIO
+        </h2>
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap gap-2 mb-8 justify-center">

@@ -19,7 +19,7 @@ const HashLinkItem: React.FC<HashLinkItemProps> = ({
   extraClasses = "",
   isActive = false,
 }) => {
-  const computedClassName = `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 
+  const computedClassName = `px-3 py-2 rounded-md text-xs font-medium transition-colors duration-200 
     hover:text-[var(--accent-color)] hover:underline 
     focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]
     ${
@@ -72,11 +72,11 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   }, []);
 
   const hashLinks: HashLinkItem[] = [
-    { name: "Home", path: "/#hero" },
-    { name: "About", path: "/#about" },
-    { name: "Education", path: "/#education" },
-    { name: "Portfolio", path: "/#portfolio" },
-    { name: "Contact", path: "/#contact" },
+    { name: "HOME", path: "/#hero" },
+    { name: "ABOUT", path: "/#about" },
+    { name: "EDUCATION", path: "/#education" },
+    { name: "PORTFOLIO", path: "/#portfolio" },
+    { name: "CONTACT", path: "/#contact" },
   ];
 
   return (
@@ -92,16 +92,18 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           {/* Logo Section */}
           <div className="flex items-center">
             <HashLink to="/#hero" smooth className="flex items-center">
-              <span className="h-8 w-auto mr-2 p-1 border border-[var(--text-color)] rounded-full text-sm font-bold">
+              <span className=" mr-2 p-1 border border-[var(--text-color)] rounded-full text-xs font-bold">
                 JLE
               </span>
 
-              <span className="text-xl font-bold">My Portfolio</span>
+              <span className="text-base sm:text-xl font-bold">
+                My Portfolio
+              </span>
             </HashLink>
           </div>
           {/* Desktop Navigation Links */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-baseline  space-x-4">
               {hashLinks.map((link) => {
                 const sectionId = link.path.split("#")[1];
                 const isActive = sectionId === activeSection;

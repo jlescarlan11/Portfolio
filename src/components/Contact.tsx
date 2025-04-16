@@ -30,6 +30,7 @@
 // =============================================================================
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Contact: React.FC = () => {
   return (
@@ -46,11 +47,13 @@ const Contact: React.FC = () => {
     >
       <div className="animate-fadeIn container relative mx-auto text-center">
         {/* Section Heading */}
-        <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
+        <h2 className="text-2xl text-center sm:text-4xl font-bold mb-4">
+          CONTACT ME
+        </h2>
         {/* Brief Tagline */}
-        <p className="text-base mb-4">I’d love to hear from you!</p>
+        <p className="text-xs sm:text-base mb-4">I’d love to hear from you!</p>
         {/* Optional Introductory Sentence to Encourage Engagement */}
-        <p className="text-base mb-8">
+        <p className="text-xs sm:text-base mb-8">
           Feel free to reach out via email – I’m always excited to connect!
         </p>
         {/* 
@@ -62,13 +65,13 @@ const Contact: React.FC = () => {
           - Enhanced focus styles (using focus:ring utilities) ensure that keyboard users can easily identify the active element.
           - aria-label clarifies the button's function for assistive technologies.
         */}
-        <a
-          href="mailto:jnescarlan@up.edu.ph"
+        <Link
+          to="mailto:jnescarlan@up.edu.ph"
           aria-label="Send email to jnescarlan@up.edu.ph"
-          className="inline-block bg-[var(--accent-color)] text-[var(--text-color)] font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-[var(--secondary-color)] hover:scale-105 hover:animate-pulse focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
+          className="text-xs sm:text-base inline-block bg-[var(--accent-color)] text-[var(--text-color)] font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-[var(--secondary-color)] hover:scale-105 hover:animate-pulse focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
         >
           Let's Get in Touch
-        </a>
+        </Link>
       </div>
     </section>
   );

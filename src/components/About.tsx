@@ -153,8 +153,8 @@ const PhotoSection: React.FC<PhotoSectionProps> = memo(
 const BioSection: React.FC = memo(() => {
   return (
     <div className="w-full md:w-3/5 md:pl-12">
-      <h2 className="text-4xl font-bold mb-4">About Me</h2>
-      <p className="text-base text-pretty text-start leading-relaxed mb-4">
+      <h2 className="text-2xl sm:text-4xl font-bold mb-4">ABOUT ME</h2>
+      <p className="text-xs sm:text-base text-pretty leading-relaxed mb-4">
         A mathematics major and self-taught full-stack developer with expertise
         in creating end-to-end web solutions. Proficient in modern frontend
         (React, Tailwind CSS) and backend (Express.js, PostgreSQL/MySQL)
@@ -164,13 +164,13 @@ const BioSection: React.FC = memo(() => {
       </p>
 
       <div className="mb-6">
-        <h3 className="text-xl font-semibold mb-2">Core Stack</h3>
+        <h3 className="text-base sm:text-xl font-semibold mb-2">TOOLS</h3>
         {Object.entries(groupedTechStacks).map(([category, techs]) => (
           <div key={category} className="mb-3">
-            <h4 className="font-medium text-[var(--text-color)] mb-1">
+            <h4 className="text-xs sm:text-base font-medium text-[var(--text-color)] mb-1">
               {category}
             </h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mr-4">
               {techs.map((tech) => (
                 <TechBadge key={tech} tech={tech} />
               ))}
@@ -180,7 +180,9 @@ const BioSection: React.FC = memo(() => {
       </div>
 
       <div className="mb-6">
-        <h3 className="text-xl font-semibold mb-2">Project Highlights</h3>
+        <h3 className="text-base sm:text-xl font-semibold mb-2">
+          PROJECT HIGHLIGHTS
+        </h3>
         <div className="flex flex-col gap-4">
           {projectHighlights.map((project) => (
             <div
@@ -188,15 +190,17 @@ const BioSection: React.FC = memo(() => {
               className="group relative p-4 border border-[var(--secondary-color)] rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
               <div className="flex flex-row items-center justify-between">
-                <h4 className="text-base font-medium">{project.title}</h4>
+                <h4 className="text-xs sm:text-base font-medium text-[var(--text-color)]">
+                  {project.title}
+                </h4>
                 <div className="flex gap-2 opacity-70 group-hover:opacity-100 transition-opacity">
                   <Link
                     to={project.preview}
                     target="_blank"
-                    className="hover:text-[var(--accent-color)]"
+                    className="hover:text-[var(--accent-color)] "
                     aria-label={`Live demo of ${project.title}`}
                   >
-                    <MdOpenInNew className="text-lg" />
+                    <MdOpenInNew className="text-xs sm:text-base" />
                   </Link>
                   {project.github && (
                     <Link
@@ -213,11 +217,11 @@ const BioSection: React.FC = memo(() => {
 
               <div className="mt-2 overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-[500px] opacity-0 group-hover:opacity-100">
                 <div className="pt-2 border-t border-[var(--secondary-color)]">
-                  <p className="text-sm mb-1">
+                  <p className="text-xs mb-1">
                     <span className="font-semibold">Category:</span>{" "}
                     {project.category}
                   </p>
-                  <p className="text-sm mb-2">
+                  <p className="text-xs mb-2">
                     <span className="font-semibold">Description:</span>{" "}
                     {project.description}
                   </p>
@@ -239,21 +243,24 @@ const BioSection: React.FC = memo(() => {
           to="/#portfolio"
           role="button"
           aria-label="View all projects"
-          className="inline-block px-6 py-3 text-base sm:text-base font-medium rounded-md text-[var(--text-color)] bg-[var(--accent-color)] transition transform duration-200 hover:scale-105 hover:shadow-xl active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
+          className="inline-block px-6 py-3 border border-transparent text-xs sm:text-base font-medium rounded-md 
+                       text-[var(--text-color)] bg-[var(--accent-color)] 
+                       transition-all duration-200 transform hover:scale-105 hover:shadow-lg 
+                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)] hover:animate-pulse"
         >
           View All Projects
         </HashLink>
       </div>
 
       <div className="flex flex-wrap text-sm items-center space-x-4">
-        <p className="flex gap-1 items-center text-balance break-normal text-justify leading-relaxed">
+        <p className="flex gap-1 items-center text-pretty text-xs sm:text-base">
           <CiLocationOn /> Cebu City
         </p>
         <Link
           to="https://www.linkedin.com/in/john-lester-escarlan-3a23072a6/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[var(--text-color)] hover:underline"
+          className=" hover:underline text-xs sm:text-base"
           aria-label="LinkedIn Profile"
         >
           LinkedIn
@@ -262,7 +269,7 @@ const BioSection: React.FC = memo(() => {
           to="https://github.com/jlescarlan11"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[var(--text-color)] hover:underline"
+          className="text-xs sm:text-base hover:underline"
           aria-label="GitHub Profile"
         >
           GitHub
@@ -272,7 +279,7 @@ const BioSection: React.FC = memo(() => {
           target="_blank"
           download="John_Lester_Escarlan_Resume.pdf"
           rel="noopener noreferrer"
-          className="text-[var(--text-color)] hover:underline"
+          className="text-xs sm:text-base hover:underline"
           aria-label="Download Resume"
         >
           Resume
