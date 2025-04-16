@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
         {/* Section Heading */}
         <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
         {/* Brief Tagline */}
-        <p className="text-lg mb-4">I’d love to hear from you!</p>
+        <p className="text-base mb-4">I’d love to hear from you!</p>
         {/* Optional Introductory Sentence to Encourage Engagement */}
         <p className="text-base mb-8">
           Feel free to reach out via email – I’m always excited to connect!

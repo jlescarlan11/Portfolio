@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
               to="/#portfolio"
               role="button"
               aria-label="View My Work"
-              className="inline-block px-6 py-3 border border-transparent text-base md:text-lg font-medium rounded-md 
+              className="inline-block px-6 py-3 border border-transparent text-base md:text-base font-medium rounded-md 
                        text-[var(--text-color)] bg-[var(--accent-color)] 
                        transition-all duration-200 transform hover:scale-105 hover:shadow-lg 
                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)] hover:animate-pulse"

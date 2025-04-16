@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "schoolName": "University of the Philippines",
+    "yearsAttended": "2022 - Present",
+    "achievements": "Recognized as a College Scholar (2022-2023) for demonstrating exceptional academic performance and leadership, and subsequently honored as a University Scholar (2023) for sustained excellence and impactful contributions in both academic and extracurricular pursuits."
+  },
+  {
+    "id": "2",
+    "schoolName": "South East Asia Institute of Trade and Technology",
+    "yearsAttended": "2020 - 2022",
+    "achievements": "Awarded for outstanding achievement in Mathematics, and Statistics and Probability, consistently ranking at the top of the class. Recognized for exceptional analytical and problem-solving skills that have set a benchmark for academic excellence."
+  },
+  {
+    "id": "3",
+    "schoolName": "North Fairview High School",
+    "yearsAttended": "2016 - 2020",
+    "achievements": "Graduated with Honors, demonstrating a commitment to academic excellence; achieved 1st Place in the 2019 Math Quiz Bowl and advanced as a District-Level Qualifier in the Damath Competition, underscoring exceptional analytical skills and competitive drive."
+  }
+]
