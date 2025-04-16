@@ -91,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
           <div className="flex items-center">
-            <HashLink to="/#hero" className="flex items-center">
+            <HashLink to="/#hero" smooth className="flex items-center">
               <span className="h-8 w-auto mr-2 p-1 border border-[var(--text-color)] rounded-full text-sm font-bold">
                 JLE
               </span>
