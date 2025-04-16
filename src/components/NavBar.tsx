@@ -19,7 +19,7 @@ const HashLinkItem: React.FC<HashLinkItemProps> = ({
   extraClasses = "",
   isActive = false,
 }) => {
-  const computedClassName = `px-3 py-2 rounded-md text-xs font-medium transition-colors duration-200 
+  const computedClassName = `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 
     hover:text-[var(--accent-color)] hover:underline 
     focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]
     ${
@@ -84,7 +84,9 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       role="navigation"
       aria-label="Main navigation"
       className={`fixed w-full z-50 transition-colors duration-300 ease-in-out ${
-        scrolled ? "bg-[var(--primary-color)]" : "bg-transparent"
+        scrolled
+          ? "bg-[var(--primary-color)]"
+          : `${isOpen ? "bg-[var(--primary-color)]" : "bg-transparent"}`
       } text-[var(--text-color)] montserrat-400`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,11 +94,11 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           {/* Logo Section */}
           <div className="flex items-center">
             <HashLink to="/#hero" smooth className="flex items-center">
-              <span className=" mr-2 p-1 border border-[var(--text-color)] rounded-full text-xs font-bold">
+              <span className=" mr-2 p-1 border border-[var(--text-color)] rounded-full text-sm font-bold">
                 JLE
               </span>
 
-              <span className="text-base sm:text-xl font-bold">
+              <span className="text-lg sm:text-2xl font-bold">
                 My Portfolio
               </span>
             </HashLink>

@@ -103,14 +103,14 @@ const Hero: React.FC = () => {
       */}
         <div className="relative z-10 text-center animate-fadeIn">
           {/* Main Heading: Displays the name with responsive text sizes */}
-          <span className="mb-4 text-xs sm:text-base text-[var(--text-color)]">
+          <span className="mb-4 text-sm sm:text-lg text-[var(--text-color)]">
             HELLO, I'M
           </span>
           <h1 className="text-4xl sm:text-6xl font-bold text-[var(--text-color)]">
             JOHN LESTER ESCARLAN
           </h1>
           {/* Tagline: A brief description with responsive spacing */}
-          <p className="mt-4 text-xs sm:text-base text-[var(--text-color)]">
+          <p className="mt-4 text-sm sm:text-lg text-[var(--text-color)]">
             BS MATH MAJOR &amp; ASPIRING FULL-STACK DEVELOPER
           </p>
           {/* 
@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
             to="/#portfolio"
             role="button"
             aria-label="View My Work"
-            className="mt-8 inline-block px-6 py-3 border border-transparent text-xs sm:text-base font-medium rounded-md 
+            className="mt-8 inline-block px-6 py-3 border border-transparent text-sm sm:text-lg font-medium rounded-md 
                        text-[var(--text-color)] bg-[var(--accent-color)] 
                        transition-all duration-200 transform hover:scale-105 hover:shadow-lg 
                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)] hover:animate-pulse"
