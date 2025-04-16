@@ -97,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             <HashLink to="/#hero" className="flex items-center">
               {!logoError ? (
                 <img
-                  src="/logo.png"
+                  // src="/logo.png"
                   alt="My Portfolio Logo"
                   className="h-8 w-auto mr-2"
                   onError={handleLogoError}
