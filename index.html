@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Enhanced SEO Meta Tags -->
+    <!-- Primary SEO Elements -->
     <title>John Lester Escarlan | Portfolio</title>
     <meta
       name="description"
@@ -13,7 +13,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="John Lester Escarlan" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph Metadata (for Facebook/LinkedIn sharing) -->
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -32,22 +32,7 @@
       content="https://john-lester-escarlan-portfolio.vercel.app/"
     />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="John Lester Escarlan | Full-stack Developer"
-    />
-    <meta
-      name="twitter:description"
-      content="Professional Full-stack Developer portfolio featuring web development projects and technical skills."
-    />
-    <meta
-      name="twitter:image"
-      content="https://yourdomain.com/images/preview.jpg"
-    />
-
-    <!-- Enhanced Structured Data -->
+    <!-- Enhanced Personal Schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -70,7 +55,7 @@
       }
     </script>
 
-    <!-- Font Preloading -->
+    <!-- Font Loading -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
@@ -89,10 +74,19 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Consider adding fallback content for SEO -->
+    <!-- SEO Fallback Content -->
     <noscript>
-      <h1>John Lester Escarlan - Full-stack Developer Portfolio</h1>
-      <p>Please enable JavaScript to view the full portfolio experience.</p>
+      <header>
+        <h1>John Lester Escarlan</h1>
+        <h2>Full-stack Web Developer</h2>
+      </header>
+      <section>
+        <p>
+          Specializing in modern web application development with React and
+          Node.js
+        </p>
+        <p>Contact: jlescarlan11@gmail.com</p>
+      </section>
     </noscript>
   </body>
 </html>
