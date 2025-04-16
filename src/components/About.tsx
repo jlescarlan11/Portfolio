@@ -90,7 +90,7 @@ interface ProjectHighlight {
 const projectHighlights: ProjectHighlight[] = [
   {
     id: "1",
-    title: "Pokémon Inventory Management System",
+    title: "PokéInventory",
     preview: "https://inventory-application-xiyr.onrender.com/",
     category: "Full-Stack",
     description:
@@ -217,7 +217,7 @@ const BioSection: React.FC = memo(() => {
               </div>
 
               <div className="mt-2 overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-[500px] opacity-0 group-hover:opacity-100">
-                <div className="pt-2 border-t border-gray-700">
+                <div className="pt-2 border-t border-[var(--secondary-color)]">
                   <p className="text-sm mb-1">
                     <span className="font-semibold">Category:</span>{" "}
                     {project.category}

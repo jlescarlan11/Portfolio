@@ -155,7 +155,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
 // -----------------------------------------------------------------------------
 const projects: Project[] = [
   {
-    title: "PokeInventory",
+    title: "PokéInventory",
     description:
       "Full-stack Pokémon and Trainer collection manager with CRUD operations and search/filter functionality.",
     thumbnail: pokemonInventoryOverview,
