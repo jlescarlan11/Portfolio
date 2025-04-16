@@ -21,11 +21,8 @@ import {
 } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import Resume from "../assets/Resume.pdf"; // Renamed for clarity
+import Resume from "../assets/Resume.pdf";
 
-// -----------------------------------------------------------------------------
-// TechIcon Map with Correct Mappings & Accessibility Improvements
-// -----------------------------------------------------------------------------
 const techIconMap: { [key: string]: JSX.Element } = {
   HTML: <SiHtml5 title="HTML" role="img" aria-label="HTML" />,
   CSS: <SiCss3 title="CSS" role="img" aria-label="CSS" />,
@@ -65,9 +62,6 @@ const techIconMap: { [key: string]: JSX.Element } = {
   API: <SiNodedotjs title="API" role="img" aria-label="API" />,
 };
 
-// -----------------------------------------------------------------------------
-// TechBadge Component (memoized)
-// -----------------------------------------------------------------------------
 const TechBadge: React.FC<{ tech: string }> = memo(({ tech }) => {
   return (
     <span className="inline-flex items-center gap-1 m-1 text-xs font-medium rounded-full text-[var(--text-color)]">
@@ -77,25 +71,19 @@ const TechBadge: React.FC<{ tech: string }> = memo(({ tech }) => {
   );
 });
 
-// -----------------------------------------------------------------------------
-// Grouped Tech Stacks
-// -----------------------------------------------------------------------------
 const groupedTechStacks: { [category: string]: string[] } = {
   Frontend: ["HTML", "CSS", "React", "TypeScript", "Vite", "Tailwind CSS"],
   "Backend & Databases": ["Express", "PostgreSQL", "MySQL"],
   Languages: ["Python", "C", "C++", "JavaScript"],
 };
 
-// -----------------------------------------------------------------------------
-// Updated Project Highlights with Additional Context
-// -----------------------------------------------------------------------------
 interface ProjectHighlight {
   id: string;
   title: string;
   preview: string;
-  github: string;
-  role: string;
-  impact: string;
+  github?: string; // Made optional
+  category: string;
+  description: string;
   tech: string[];
 }
 
@@ -104,38 +92,45 @@ const projectHighlights: ProjectHighlight[] = [
     id: "1",
     title: "Pokémon Inventory Management System",
     preview: "https://inventory-application-xiyr.onrender.com/",
-    github: "https://github.com/jlescarlan11/inventory-application",
-    role: "Full-Stack Developer",
-    impact: "Improved navigation efficiency by 40%",
+    category: "Full-Stack",
+    description:
+      "Full-stack Pokémon and Trainer collection manager with CRUD operations and search/filter functionality.",
     tech: ["EJS", "Tailwind CSS", "JavaScript", "Express", "PostgreSQL"],
   },
   {
     id: "2",
     title: "Freedom Wall",
     preview: "https://web-production-2b2eb.up.railway.app/",
-    github: "https://github.com/jlescarlan11/Mini-Messaging-App",
-    role: "Full Stack Developer",
-    impact: "Enhanced community engagement",
+    category: "Full-Stack",
+    description:
+      "Community platform for sharing thoughts, concerns, and unspoken feelings.",
     tech: ["EJS", "CSS", "JavaScript", "Express", "PostgreSQL"],
   },
   {
     id: "3",
     title: "Nutcha Bites",
     preview: "https://nutcha-bites.vercel.app/",
-    github: "https://github.com/jlescarlan11/PHILARTS/tree/main/vite-project",
-    role: "Frontend Developer",
-    impact: "Streamlined product display aligned with business strategies",
+    category: "Frontend",
+    description:
+      "E-commerce prototype with shopping cart and checkout functionality.",
     tech: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
+  // // Example project without GitHub link:
+  // {
+  //   id: "4",
+  //   title: "Sample Project",
+  //   preview: "https://example.com",
+  //   category: "Frontend",
+  //   description: "Example project without GitHub repository",
+  //   tech: ["React", "TypeScript"],
+  // },
 ];
 
-// -----------------------------------------------------------------------------
-// PhotoSection Component (memoized and optimized for lazy loading)
-// -----------------------------------------------------------------------------
 interface PhotoSectionProps {
   photoUrl?: string;
   showPhoto?: boolean;
 }
+
 const PhotoSection: React.FC<PhotoSectionProps> = memo(
   ({ photoUrl, showPhoto }) => {
     if (showPhoto === false) return null;
@@ -153,15 +148,10 @@ const PhotoSection: React.FC<PhotoSectionProps> = memo(
   }
 );
 
-// -----------------------------------------------------------------------------
-// BioSection with Metrics-Driven Bio & Memoization
-// -----------------------------------------------------------------------------
 const BioSection: React.FC = memo(() => {
   return (
     <div className="w-full md:w-3/5 md:pl-12">
-      {/* Section Heading */}
       <h2 className="text-4xl font-bold mb-4">About Me</h2>
-      {/* Metrics-Driven Bio */}
       <p className="text-base text-pretty text-start leading-relaxed mb-4">
         Mathematics major and self-taught full-stack developer passionate about
         building impactful web solutions. I have successfully built applications
@@ -177,12 +167,14 @@ const BioSection: React.FC = memo(() => {
           optimization.
         </li>
       </ul>
-      {/* Grouped Tech Stacks */}
+
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2">Core Stack</h3>
         {Object.entries(groupedTechStacks).map(([category, techs]) => (
           <div key={category} className="mb-3">
-            <h4 className="font-medium text-gray-300 mb-1">{category}</h4>
+            <h4 className="font-medium text-[var(--text-color)] mb-1">
+              {category}
+            </h4>
             <div className="flex flex-wrap gap-2">
               {techs.map((tech) => (
                 <TechBadge key={tech} tech={tech} />
@@ -191,60 +183,61 @@ const BioSection: React.FC = memo(() => {
           </div>
         ))}
       </div>
-      {/* Enhanced Project Highlights */}
+
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2">Project Highlights</h3>
         <div className="flex flex-col gap-4">
           {projectHighlights.map((project) => (
             <div
               key={project.id}
-              className="group relative p-4 bg-[var(--secondary-color)] rounded-lg"
+              className="group relative p-4 border border-[var(--secondary-color)] rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
-              <div className="flex flex-row items-center gap-1">
-                {project.title}
-                <div className="flex flex-row items-center gap-2">
+              <div className="flex flex-row items-center justify-between">
+                <h4 className="text-base font-medium">{project.title}</h4>
+                <div className="flex gap-2 opacity-70 group-hover:opacity-100 transition-opacity">
                   <Link
                     to={project.preview}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-gray-400 hover:text-white"
+                    className="hover:text-[var(--accent-color)]"
                     aria-label={`Live demo of ${project.title}`}
                   >
-                    <MdOpenInNew className="text-base" />
+                    <MdOpenInNew className="text-lg" />
                   </Link>
-                  <Link
-                    to={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-gray-400 hover:text-white"
-                    aria-label={`${project.title} GitHub repository`}
-                  >
-                    <FiGithub />
-                  </Link>
+                  {project.github && (
+                    <Link
+                      to={project.github}
+                      target="_blank"
+                      className="hover:text-[var(--accent-color)]"
+                      aria-label={`${project.title} GitHub repository`}
+                    >
+                      <FiGithub className="text-lg" />
+                    </Link>
+                  )}
                 </div>
               </div>
-              <div className="mt-2 text-xs text-gray-200">
-                <p>
-                  <span className="font-semibold">Role:</span> {project.role}
-                </p>
-                <p>
-                  <span className="font-semibold">Impact:</span>{" "}
-                  {project.impact}
-                </p>
-                <p className="flex items-center flex-wrap">
-                  <span className="font-semibold">Tech:</span>{" "}
-                  {project.tech.map((t, idx) => (
-                    <span key={idx} className="inline-block mr-1">
-                      <TechBadge tech={t} />
-                    </span>
-                  ))}
-                </p>
+
+              <div className="mt-2 overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-[500px] opacity-0 group-hover:opacity-100">
+                <div className="pt-2 border-t border-gray-700">
+                  <p className="text-sm mb-1">
+                    <span className="font-semibold">Category:</span>{" "}
+                    {project.category}
+                  </p>
+                  <p className="text-sm mb-2">
+                    <span className="font-semibold">Description:</span>{" "}
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                      <TechBadge key={t} tech={t} />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-      {/* Call-to-Action Button */}
+
       <div className="mb-6">
         <HashLink
           smooth
@@ -256,7 +249,7 @@ const BioSection: React.FC = memo(() => {
           View All Projects
         </HashLink>
       </div>
-      {/* Engagement Elements: Social Links & Resume Download */}
+
       <div className="flex flex-wrap text-sm items-center space-x-4">
         <p className="flex gap-1 items-center text-balance break-normal text-justify leading-relaxed">
           <CiLocationOn /> Cebu City
@@ -290,9 +283,9 @@ const BioSection: React.FC = memo(() => {
           Resume
         </Link>
       </div>
-      {/* Optional: Passion/Current Learning Section */}
-      <div className="mt-4 p-4 bg-gray-800 rounded">
-        <h4 className="text-sm font-semibold mb-2 text-gray-100">
+
+      {/* <div className="mt-4 p-4 bg-[var(--secondary-color)] rounded">
+        <h4 className="text-sm font-semibold mb-2 text-[var(--text-color)]">
           Currently Exploring
         </h4>
         <div className="flex gap-2">
@@ -300,17 +293,14 @@ const BioSection: React.FC = memo(() => {
           <TechBadge tech="Prisma" />
           <TechBadge tech="API" />
         </div>
-        <p className="text-sm mt-2 text-gray-400">
+        <p className="text-sm mt-2 text-gray-500">
           Actively learning about authentication, Prisma, and APIs.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 });
 
-// -----------------------------------------------------------------------------
-// About Component (memoized)
-// -----------------------------------------------------------------------------
 interface AboutMeProps {
   photoUrl?: string;
   showPhoto?: boolean;
