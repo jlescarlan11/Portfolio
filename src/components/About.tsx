@@ -21,7 +21,7 @@ import {
 } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import Resume from "../assets/John Lester Escarlan-Resume.pdf";
+import Resume from "../assets/John Lester Escarlan.pdf";
 
 const techIconMap: { [key: string]: JSX.Element } = {
   HTML: <SiHtml5 title="HTML" role="img" aria-label="HTML" />,
@@ -272,8 +272,8 @@ const BioSection: React.FC = memo(() => {
         >
           GitHub
         </Link>
-        <a
-          href={Resume}
+        <Link
+          to={Resume}
           target="_blank"
           download="John_Escarlan_Resume.pdf"
           rel="noopener noreferrer"
@@ -281,7 +281,7 @@ const BioSection: React.FC = memo(() => {
           aria-label="Download Resume"
         >
           Resume
-        </a>
+        </Link>
       </div>
 
       {/* <div className="mt-4 p-4 bg-[var(--secondary-color)] rounded">
