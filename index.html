@@ -3,32 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Enhanced SEO Meta Tags -->
+    <title>John Lester Escarlan | Portfolio</title>
     <meta
       name="description"
-      content="Portfolio website of John Lester Escarlan - Full-stack Developer. Explore works, projects, and design inspirations."
+      content="John Lester Escarlan - Professional Full-stack Developer specializing in modern web development. View portfolio projects, technical expertise, and development experience."
     />
-    <meta name="robots" content="index, follow" />
-    <link
-      rel="canonical"
-      href="https://john-lester-escarlan-portfolio.vercel.app/"
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="John Lester Escarlan" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="John Lester Escarlan | Full-stack Developer Portfolio"
     />
-    <!-- Preconnect to the font host for faster DNS resolution -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Preload the Google Fonts stylesheet -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      onload="this.onload=null;this.rel='stylesheet'"
+    <meta
+      property="og:description"
+      content="Professional Full-stack Developer showcasing technical projects and web development expertise."
     />
-    <!-- Fallback for users with JavaScript disabled -->
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      />
-    </noscript>
-    <title>John Lester Escarlan - Portfolio</title>
+    <meta
+      property="og:image"
+      content="https://yourdomain.com/images/preview.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://john-lester-escarlan-portfolio.vercel.app/"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="John Lester Escarlan | Full-stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Professional Full-stack Developer portfolio featuring web development projects and technical skills."
+    />
+    <meta
+      name="twitter:image"
+      content="https://yourdomain.com/images/preview.jpg"
+    />
+
+    <!-- Enhanced Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -40,12 +59,40 @@
           "https://github.com/jlescarlan11",
           "https://www.linkedin.com/in/john-lester-escarlan/"
         ],
-        "jobTitle": "Full-stack Web Developer"
+        "jobTitle": "Full-stack Web Developer",
+        "description": "Professional Full-stack Developer with expertise in modern web technologies",
+        "alumniOf": "STI College",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Manila",
+          "addressCountry": "Philippines"
+        }
       }
     </script>
+
+    <!-- Font Preloading -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Consider adding fallback content for SEO -->
+    <noscript>
+      <h1>John Lester Escarlan - Full-stack Developer Portfolio</h1>
+      <p>Please enable JavaScript to view the full portfolio experience.</p>
+    </noscript>
   </body>
 </html>
