@@ -98,6 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               {!logoError ? (
                 <img
                   // src="/logo.png"
+                  src=""
                   alt="My Portfolio Logo"
                   className="h-8 w-auto mr-2"
                   onError={handleLogoError}
