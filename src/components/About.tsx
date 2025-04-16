@@ -137,19 +137,12 @@ const BioSection = () => {
       <h2 className="text-4xl font-bold mb-4">About Me</h2>
       {/* Bio Text */}
       <p className="text-lg text-pretty text-start leading-relaxed mb-6">
-        As a Mathematics Major at the University of the Philippines, I’ve honed
-        my analytical mindset into becoming a self-taught full-stack web
-        developer. I started my journey through The Odin Project’s curriculum. I
-        build user-centric applications from frontend to backend, leveraging
-        modern tools like React, Vite, and Tailwind CSS for responsive
-        interfaces, with Express.js and PostgreSQL/MySQL for server-side logic
-        and database management. My projects—including pokemon inventory, a
-        product website, and a community-driven freedom wall—reflect my ability
-        to transform ideas into clean, functional solutions. I am also
-        proficient in Python, C, and C++, which helps me use my mathematics
-        background to solve machine problems. Whether crafting intuitive UIs or
-        optimizing data flows, I prioritize simplicity and usability at every
-        components.
+        Mathematics major and self-taught full-stack developer with expertise in
+        creating end- to-end web solutions. Proficient in modern frontend
+        (React, Tailwind CSS) and backend (Express.js, PostgreSQL/MySQL)
+        technologies, as well as programming in Python, C, and C++. Passionate
+        about developing intuitive, scalable applications that drive measurable
+        improvements.
       </p>
       {/* Techstacks */}
       <div className="mb-6">
