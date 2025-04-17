@@ -216,7 +216,7 @@ const BioSection: React.FC = memo(() => {
               </div>
 
               <div className="mt-2 overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-[500px] opacity-0 group-hover:opacity-100">
-                <div className="pt-2 border-t border-[var(--secondary-color)]">
+                <div className="pt-2 border-t text-xs border-[var(--secondary-color)]">
                   <p className="text-base mb-1">
                     <span className="font-semibold">Category:</span>{" "}
                     {project.category}
