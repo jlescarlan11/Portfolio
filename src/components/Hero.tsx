@@ -103,15 +103,15 @@ const Hero: React.FC = () => {
       */}
         <div className="relative z-10 text-center animate-fadeIn">
           {/* Main Heading: Displays the name with responsive text sizes */}
-          <span className="mb-4 text-base sm:text-lg text-[var(--text-color)]">
-            HELLO, I'M
-          </span>
+          <p className="mb-2 text-base sm:text-lg text-[var(--text-color)]">
+            Hello, I'm
+          </p>
           <h1 className="text-4xl sm:text-6xl font-bold text-[var(--text-color)]">
             JOHN LESTER ESCARLAN
           </h1>
           {/* Tagline: A brief description with responsive spacing */}
-          <p className="mt-4 text-base sm:text-lg text-[var(--text-color)]">
-            BS MATH MAJOR &amp; ASPIRING FULL-STACK DEVELOPER
+          <p className="mt-2 text-base sm:text-lg text-[var(--text-color)]">
+            BS Math Major &amp; Aspiring Full-stack Developer
           </p>
           {/* 
           Call-to-Action (CTA) Button:
