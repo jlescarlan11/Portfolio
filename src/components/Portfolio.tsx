@@ -68,7 +68,7 @@ const techIconMap: { [key: string]: JSX.Element } = {
 };
 
 const TechBadge: React.FC<{ tech: string }> = ({ tech }) => (
-  <span className="inline-flex items-center gap-1 m-1 text-sm font-medium rounded-full bg-[var(--accent-color)] text-[var(--text-color)] py-1 px-2">
+  <span className="inline-flex items-center gap-1 m-1 text-xs font-medium rounded-full bg-[var(--accent-color)] text-[var(--text-color)] py-1 px-2">
     {techIconMap[tech] || null}
     <span>{tech}</span>
   </span>
@@ -98,7 +98,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
       {/* Feature Overlay */}
       {project.features && (
         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-300 p-4 flex items-center justify-center">
-          <ul className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+          <ul className="text-white text-base opacity-0 group-hover:opacity-100 transition-opacity">
             {project.features.map((feat, idx) => (
               <li key={idx} className="flex items-center mb-2">
                 <span className="mr-2">✓</span>
@@ -112,9 +112,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
 
     <div className="p-4">
       <h3 className="text-lg sm:text-2xl font-semibold mb-2">
-        {project.title.toLocaleUpperCase()}
+        {project.title}
       </h3>
-      <p className="text-sm mb-4 text-[var(--text-color)] hyphens-auto">
+      <p className="text-base mb-4 text-[var(--text-color)] hyphens-auto">
         {project.description}
       </p>
 
@@ -129,17 +129,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
           href={project.preview}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 bg-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition-colors text-sm"
+          className="flex items-center gap-2 px-4 py-2 bg-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition-colors text-base"
           aria-label={`Live demo of ${project.title}`}
         >
-          Live Demo <MdOpenInNew className="text-sm" />
+          Live Demo <MdOpenInNew className="text-base" />
         </a>
         {project.code && (
           <a
             href={project.code}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 border border-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition-colors text-sm"
+            className="flex items-center gap-2 px-4 py-2 border border-[var(--secondary-color)] text-[var(--text-color)] rounded hover:bg-[var(--accent-color)] transition-colors text-base"
             aria-label={`View code for ${project.title}`}
           >
             Code <FaGithub />
@@ -281,7 +281,7 @@ const Portfolio: React.FC = () => {
       className="relative overflow-hidden bg-[var(--primary-color)] text-[var(--text-color)] pt-24 pb-12 px-4 sm:px-6 md:px-12"
     >
       <div className="container mx-auto animate-fadeIn">
-        <h2 className="text-3xl text-center sm:text-5xl font-bold mb-4">
+        <h2 className="text-2xl text-center sm:text-5xl font-bold mb-4">
           PORTFOLIO
         </h2>
 

@@ -19,7 +19,7 @@ const HashLinkItem: React.FC<HashLinkItemProps> = ({
   extraClasses = "",
   isActive = false,
 }) => {
-  const computedClassName = `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 
+  const computedClassName = `px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 
     hover:text-[var(--accent-color)] hover:underline 
     focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]
     ${
@@ -94,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           {/* Logo Section */}
           <div className="flex items-center">
             <HashLink to="/#hero" smooth className="flex items-center">
-              <span className=" mr-2 p-1 border border-[var(--text-color)] rounded-full text-sm font-bold">
+              <span className=" mr-2 p-1 border border-[var(--text-color)] rounded-full text-base font-bold">
                 JLE
               </span>
 

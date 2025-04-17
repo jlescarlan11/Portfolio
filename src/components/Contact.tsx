@@ -47,13 +47,13 @@ const Contact: React.FC = () => {
     >
       <div className="animate-fadeIn container relative mx-auto text-center">
         {/* Section Heading */}
-        <h2 className="text-3xl text-center sm:text-5xl font-bold mb-4">
+        <h2 className="text-2xl text-center sm:text-5xl font-bold mb-4">
           CONTACT ME
         </h2>
         {/* Brief Tagline */}
-        <p className="text-sm sm:text-lg mb-4">I’d love to hear from you!</p>
+        <p className="text-base sm:text-lg mb-4">I’d love to hear from you!</p>
         {/* Optional Introductory Sentence to Encourage Engagement */}
-        <p className="text-sm sm:text-lg mb-8">
+        <p className="text-base sm:text-lg mb-8">
           Feel free to reach out via email – I’m always excited to connect!
         </p>
         {/* 
@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
         <Link
           to="mailto:jnescarlan@up.edu.ph"
           aria-label="Send email to jnescarlan@up.edu.ph"
-          className="text-sm sm:text-lg inline-block bg-[var(--accent-color)] text-[var(--text-color)] font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-[var(--secondary-color)] hover:scale-105 hover:animate-pulse focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
+          className="text-base sm:text-lg inline-block bg-[var(--accent-color)] text-[var(--text-color)] font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-[var(--secondary-color)] hover:scale-105 hover:animate-pulse focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
         >
           Let's Get in Touch
         </Link>

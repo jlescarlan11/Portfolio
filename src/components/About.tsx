@@ -64,7 +64,7 @@ const techIconMap: { [key: string]: JSX.Element } = {
 
 const TechBadge: React.FC<{ tech: string }> = memo(({ tech }) => {
   return (
-    <span className="inline-flex items-center gap-1 m-1 text-sm font-medium rounded-full text-[var(--text-color)]">
+    <span className="inline-flex items-center gap-1 m-1 text-xs font-medium rounded-full text-[var(--text-color)]">
       {techIconMap[tech] || null}
       <span className="sr-only">{tech}</span> {tech}
     </span>
@@ -153,8 +153,8 @@ const PhotoSection: React.FC<PhotoSectionProps> = memo(
 const BioSection: React.FC = memo(() => {
   return (
     <div className="w-full md:w-3/5 md:pl-12">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-4">ABOUT ME</h2>
-      <p className="text-sm sm:text-lg text-pretty leading-relaxed mb-4">
+      <h2 className="text-2xl sm:text-5xl font-bold mb-4">ABOUT ME</h2>
+      <p className="text-base sm:text-lg text-pretty leading-relaxed mb-4">
         A mathematics major and self-taught full-stack developer with expertise
         in creating end-to-end web solutions. Proficient in modern frontend
         (React, Tailwind CSS) and backend (Express.js, PostgreSQL/MySQL)
@@ -167,7 +167,7 @@ const BioSection: React.FC = memo(() => {
         <h3 className="text-lg sm:text-2xl font-semibold mb-2">TOOLS</h3>
         {Object.entries(groupedTechStacks).map(([category, techs]) => (
           <div key={category} className="mb-3">
-            <h4 className="text-sm sm:text-lg font-medium text-[var(--text-color)] mb-1">
+            <h4 className="text-base sm:text-lg font-medium text-[var(--text-color)] mb-1">
               {category}
             </h4>
             <div className="flex flex-wrap gap-2 mr-4">
@@ -190,7 +190,7 @@ const BioSection: React.FC = memo(() => {
               className="group relative p-4 border border-[var(--secondary-color)] rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
               <div className="flex flex-row items-center justify-between">
-                <h4 className="text-sm sm:text-lg font-medium text-[var(--text-color)]">
+                <h4 className="text-base sm:text-lg font-medium text-[var(--text-color)]">
                   {project.title}
                 </h4>
                 <div className="flex gap-2 opacity-70 group-hover:opacity-100 transition-opacity">
@@ -200,7 +200,7 @@ const BioSection: React.FC = memo(() => {
                     className="hover:text-[var(--accent-color)] "
                     aria-label={`Live demo of ${project.title}`}
                   >
-                    <MdOpenInNew className="text-sm sm:text-lg" />
+                    <MdOpenInNew className="text-base sm:text-lg" />
                   </Link>
                   {project.github && (
                     <Link
@@ -209,7 +209,7 @@ const BioSection: React.FC = memo(() => {
                       className="hover:text-[var(--accent-color)]"
                       aria-label={`${project.title} GitHub repository`}
                     >
-                      <FiGithub className="text-sm sm:text-lg" />
+                      <FiGithub className="text-base sm:text-lg" />
                     </Link>
                   )}
                 </div>
@@ -217,11 +217,11 @@ const BioSection: React.FC = memo(() => {
 
               <div className="mt-2 overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-[500px] opacity-0 group-hover:opacity-100">
                 <div className="pt-2 border-t border-[var(--secondary-color)]">
-                  <p className="text-sm mb-1">
+                  <p className="text-base mb-1">
                     <span className="font-semibold">Category:</span>{" "}
                     {project.category}
                   </p>
-                  <p className="text-sm mb-2">
+                  <p className="text-base mb-2">
                     <span className="font-semibold">Description:</span>{" "}
                     {project.description}
                   </p>
@@ -243,7 +243,7 @@ const BioSection: React.FC = memo(() => {
           to="/#portfolio"
           role="button"
           aria-label="View all projects"
-          className="inline-block px-6 py-3 border border-transparent text-sm sm:text-lg font-medium rounded-md 
+          className="inline-block px-6 py-3 border border-transparent text-base sm:text-lg font-medium rounded-md 
                        text-[var(--text-color)] bg-[var(--accent-color)] 
                        transition-all duration-200 transform hover:scale-105 hover:shadow-lg 
                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)] hover:animate-pulse"
@@ -252,15 +252,15 @@ const BioSection: React.FC = memo(() => {
         </HashLink>
       </div>
 
-      <div className="flex flex-wrap text-sm items-center space-x-4">
-        <p className="flex gap-1 items-center text-pretty text-sm sm:text-lg">
+      <div className="flex flex-wrap text-xs items-center space-x-4">
+        <p className="flex gap-1 items-center text-pretty">
           <CiLocationOn /> Cebu City
         </p>
         <Link
           to="https://www.linkedin.com/in/john-lester-escarlan-3a23072a6/"
           target="_blank"
           rel="noopener noreferrer"
-          className=" hover:underline text-sm sm:text-lg"
+          className=" hover:underline"
           aria-label="LinkedIn Profile"
         >
           LinkedIn
@@ -269,7 +269,7 @@ const BioSection: React.FC = memo(() => {
           to="https://github.com/jlescarlan11"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm sm:text-lg hover:underline"
+          className=" hover:underline"
           aria-label="GitHub Profile"
         >
           GitHub
@@ -279,7 +279,7 @@ const BioSection: React.FC = memo(() => {
           target="_blank"
           download="John_Lester_Escarlan_Resume.pdf"
           rel="noopener noreferrer"
-          className="text-sm sm:text-lg hover:underline"
+          className="hover:underline"
           aria-label="Download Resume"
         >
           Resume
@@ -287,7 +287,7 @@ const BioSection: React.FC = memo(() => {
       </div>
 
       {/* <div className="mt-4 p-4 bg-[var(--secondary-color)] rounded">
-        <h4 className="text-sm font-semibold mb-2 text-[var(--text-color)]">
+        <h4 className="text-base font-semibold mb-2 text-[var(--text-color)]">
           Currently Exploring
         </h4>
         <div className="flex gap-2">
@@ -295,7 +295,7 @@ const BioSection: React.FC = memo(() => {
           <TechBadge tech="Prisma" />
           <TechBadge tech="API" />
         </div>
-        <p className="text-sm mt-2 text-gray-500">
+        <p className="text-base mt-2 text-gray-500">
           Actively learning about authentication, Prisma, and APIs.
         </p>
       </div> */}

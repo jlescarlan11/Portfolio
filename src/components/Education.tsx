@@ -32,11 +32,11 @@ const EducationCard: React.FC<EducationCardProps> = ({ entry }) => {
           loading="lazy"
         />
         <h3 className="text-lg sm:text-2xl font-semibold mb-2">
-          {entry.schoolName.toLocaleUpperCase()}
+          {entry.schoolName}
         </h3>
       </div>
 
-      <p className=" text-sm sm:text-lg mb-1">
+      <p className=" text-base sm:text-lg mb-1">
         <span className="sr-only">Years attended: </span>
         {entry.yearsAttended}
       </p>
@@ -44,7 +44,7 @@ const EducationCard: React.FC<EducationCardProps> = ({ entry }) => {
       {entry.achievements && (
         <>
           <p
-            className={`text-sm sm:text-lg font-extralight text-pretty hyphens-auto text-start ${
+            className={`text-base sm:text-lg font-extralight text-pretty hyphens-auto text-start ${
               !isExpanded ? "line-clamp-3" : ""
             }`}
           >
@@ -55,7 +55,7 @@ const EducationCard: React.FC<EducationCardProps> = ({ entry }) => {
           </p>
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-2 text-[var(--accent-color)] text-sm sm:text-lg  hover:underline focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
+            className="mt-2 text-[var(--accent-color)] text-base sm:text-lg  hover:underline focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
             aria-expanded={isExpanded}
           >
             {isExpanded ? "Show Less" : "Show More"}
@@ -68,7 +68,7 @@ const EducationCard: React.FC<EducationCardProps> = ({ entry }) => {
           {entry.skills.map((skill, index) => (
             <span
               key={index}
-              className="px-3 py-1 text-sm bg-[var(--secondary-color)] text-[var(--text-color)] rounded-full"
+              className="px-3 py-1 text-base bg-[var(--secondary-color)] text-[var(--text-color)] rounded-full"
             >
               {skill}
             </span>
@@ -119,7 +119,7 @@ const Education: React.FC = () => {
       className="relative overflow-hidden bg-[var(--primary-color)] text-[var(--text-color)] pt-24 pb-12 px-4 sm:px-6 md:px-12"
     >
       <div className="container mx-auto animate-fadeIn">
-        <h2 className="text-3xl text-center sm:text-5xl font-bold mb-4">
+        <h2 className="text-2xl text-center sm:text-5xl font-bold mb-4">
           EDUCATION
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

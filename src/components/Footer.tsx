@@ -8,7 +8,7 @@ const Footer = () => {
       >
         <div className="container mx-auto text-center animate-fadeIn">
           {/* Copyright Notice */}
-          <p className="text-sm">
+          <p className="text-base">
             &copy; {new Date().getFullYear()} John Lester Escarlan. All rights
             reserved.
           </p>
