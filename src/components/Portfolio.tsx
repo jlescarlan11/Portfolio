@@ -163,7 +163,7 @@ const projects: Project[] = [
     preview: "https://random-chat-0b76.onrender.com/",
     code: undefined,
     techStack: ["Express", "EJS", "Tailwind CSS", "Javascript", "PostgreSQL"],
-    category: ["full-stack", "frontend"],
+    category: ["full-stack", "backend"],
     features: ["Join Chat", "Send messages", "Authentication"],
   },
   {
