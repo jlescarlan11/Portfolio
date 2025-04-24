@@ -90,6 +90,15 @@ interface ProjectHighlight {
 const projectHighlights: ProjectHighlight[] = [
   {
     id: "1",
+    title: "Random Chat",
+    description:
+      "A simple app that allows users to create an account, join chat, and send messages.",
+    preview: "https://random-chat-0b76.onrender.com/",
+    category: "Full-Stack",
+    tech: ["Express", "EJS", "Tailwind CSS", "Javascript", "PostgreSQL"],
+  },
+  {
+    id: "2",
     title: "PokéInventory",
     preview: "https://inventory-application-xiyr.onrender.com/",
     category: "Full-Stack",
@@ -98,22 +107,13 @@ const projectHighlights: ProjectHighlight[] = [
     tech: ["EJS", "Tailwind CSS", "JavaScript", "Express", "PostgreSQL"],
   },
   {
-    id: "2",
+    id: "3",
     title: "Freedom Wall",
     preview: "https://web-production-2b2eb.up.railway.app/",
     category: "Full-Stack",
     description:
       "Community platform for sharing thoughts, concerns, and unspoken feelings.",
     tech: ["EJS", "CSS", "JavaScript", "Express", "PostgreSQL"],
-  },
-  {
-    id: "3",
-    title: "Nutcha Bites",
-    preview: "https://nutcha-bites.vercel.app/",
-    category: "Frontend",
-    description:
-      "E-commerce prototype with shopping cart and checkout functionality.",
-    tech: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   // // Example project without GitHub link:
   // {

@@ -32,6 +32,7 @@ import memoryGamePreview from "../assets/projects/project-memory-game.jpg";
 import shoppingCartPreview from "../assets/projects/project-shopping-cart.jpg";
 import freedomWallOverview from "../assets/projects/project-freedom-wall.png";
 import pokemonInventoryOverview from "../assets/projects/project-pokemon-inventory.png";
+import randomChatPreview from "../assets/projects/project-random-chat.png";
 
 // -----------------------------------------------------------------------------
 // Project Interface
@@ -154,6 +155,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
 // Project Data with Categories & Features
 // -----------------------------------------------------------------------------
 const projects: Project[] = [
+  {
+    title: "Random Chat",
+    description:
+      "A simple app that allows users to create an account, join chat, and send messages.",
+    thumbnail: randomChatPreview,
+    preview: "https://random-chat-0b76.onrender.com/",
+    code: undefined,
+    techStack: ["Express", "EJS", "Tailwind CSS", "Javascript", "PostgreSQL"],
+    category: ["full-stack", "frontend"],
+    features: ["Join Chat", "Send messages", "Authentication"],
+  },
   {
     title: "PokéInventory",
     description:
