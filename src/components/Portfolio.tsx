@@ -18,6 +18,8 @@ import {
   SiExpress,
   SiMongodb,
   SiPostgresql,
+  SiPrisma,
+  SiCloudinary,
 } from "react-icons/si";
 import { MdOpenInNew } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
@@ -33,6 +35,7 @@ import shoppingCartPreview from "../assets/projects/project-shopping-cart.jpg";
 import freedomWallOverview from "../assets/projects/project-freedom-wall.png";
 import pokemonInventoryOverview from "../assets/projects/project-pokemon-inventory.png";
 import randomChatPreview from "../assets/projects/project-random-chat.png";
+import storifyPreview from "../assets/projects/project-storify.png";
 
 // -----------------------------------------------------------------------------
 // Project Interface
@@ -66,6 +69,8 @@ const techIconMap: { [key: string]: JSX.Element } = {
   Express: <SiExpress title="Express" />,
   MongoDB: <SiMongodb title="MongoDB" />,
   PostgreSQL: <SiPostgresql title="PostgreSQL" />,
+  Prisma: <SiPrisma title="Prisma ORM" />,
+  Cloudinary: <SiCloudinary title="Cloudinary" />,
 };
 
 const TechBadge: React.FC<{ tech: string }> = ({ tech }) => (
@@ -155,6 +160,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
 // Project Data with Categories & Features
 // -----------------------------------------------------------------------------
 const projects: Project[] = [
+  {
+    title: "Storify",
+    description:
+      "A file management tool for uploading, organizing, and sharing files via secure, customizable expiring links with built-in previews.",
+    thumbnail: storifyPreview,
+    preview: "https://storifyyy.onrender.com/",
+    code: undefined,
+    techStack: [
+      "Express",
+      "EJS",
+      "Tailwind CSS",
+      "Javascript",
+      "Prisma",
+      "PostgreSQL",
+      "Cloudinary",
+    ],
+    category: ["full-stack", "backend"],
+    features: ["File Storage", "Upload File", "Download File"],
+  },
   {
     title: "Random Chat",
     description:

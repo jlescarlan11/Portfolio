@@ -5,6 +5,7 @@ import { MdOpenInNew } from "react-icons/md";
 import { FiGithub } from "react-icons/fi";
 import {
   SiC,
+  SiCloudinary,
   SiCplusplus,
   SiCss3,
   SiEjs,
@@ -58,6 +59,9 @@ const techIconMap: { [key: string]: JSX.Element } = {
       aria-label="Authentication"
     />
   ),
+  Cloudinary: (
+    <SiCloudinary title="Cloudinary" role="img" aria-label="Cloudinary" />
+  ),
   Prisma: <SiPrisma title="Prisma" role="img" aria-label="Prisma" />,
   API: <SiNodedotjs title="API" role="img" aria-label="API" />,
 };
@@ -89,6 +93,23 @@ interface ProjectHighlight {
 
 const projectHighlights: ProjectHighlight[] = [
   {
+    id: "3",
+    title: "Storify",
+    preview: "https://storifyyy.onrender.com/",
+    category: "Full-Stack",
+    description:
+      "A file management tool for uploading, organizing, and sharing files via secure, customizable expiring links with built-in previews.",
+    tech: [
+      "EJS",
+      "JavaScript",
+      "Express",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Prisma",
+      "Cloudinary",
+    ],
+  },
+  {
     id: "1",
     title: "Random Chat",
     description:
@@ -105,15 +126,6 @@ const projectHighlights: ProjectHighlight[] = [
     description:
       "Full-stack Pokémon and Trainer collection manager with CRUD operations and search/filter functionality.",
     tech: ["EJS", "Tailwind CSS", "JavaScript", "Express", "PostgreSQL"],
-  },
-  {
-    id: "3",
-    title: "Freedom Wall",
-    preview: "https://web-production-2b2eb.up.railway.app/",
-    category: "Full-Stack",
-    description:
-      "Community platform for sharing thoughts, concerns, and unspoken feelings.",
-    tech: ["EJS", "CSS", "JavaScript", "Express", "PostgreSQL"],
   },
   // // Example project without GitHub link:
   // {
